@@ -22,17 +22,24 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.z > player.transform.position.z && !gameObject.GetComponent<EnemyHealth>().enemyDead)
+        if (!gameObject.GetComponent<EnemyHealth>().enemyDead)
         {
             float step = speed * Time.deltaTime;
-
-            float distance = Vector3.Distance(transform.position, player.position);
-            if (distance > minDistance)
+            if (transform.position.z <= player.transform.position.z)
             {
-                transform.LookAt(player);
-                transform.position = Vector3.MoveTowards(transform.position, player.position, step);
+                transform.position = Vector3.MoveTowards(transform.position, Vector3.up, step);
+            }
+            else
+            {
+                float distance = Vector3.Distance(transform.position, player.position);
+                if (distance > minDistance)
+                {
+                    transform.LookAt(player);
+                    transform.position = Vector3.MoveTowards(transform.position, player.position, step);
+                }
             }
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)

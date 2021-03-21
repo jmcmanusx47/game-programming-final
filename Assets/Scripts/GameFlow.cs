@@ -10,9 +10,9 @@ public class GameFlow : MonoBehaviour
     public int mainTileLength = 12;
     public int startingTiles = 5;
     public GameObject[] spawnables;
-    public float spawnTileRate = 3.0f;
+    public float spawnTileRate = 1.75f;
     public float[] spawnRates;
-    public float noSpawnRate;
+    public float noSpawnRate = 1.75f;
     public float spawnEnemiesY = 1.5f;
 
     private Vector3 nextTileSpawn;

@@ -26,7 +26,12 @@ public class DestroyProjectile : MonoBehaviour
         //MAKE SURE THE ENEMIES ARE ACTUALLY TAGGED OR ELSE IT WONT DO DAMAGE!!!!!
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<EnemyHealth>().TakeDamage(projectileDamage);
+            var enemyMove = other.GetComponent<EnemyMovement>();
+            bool checkOnScreen = enemyMove.onScreen;
+            if (checkOnScreen)
+            {
+                other.gameObject.GetComponent<EnemyHealth>().TakeDamage(projectileDamage);
+            }
         }
         if (!other.gameObject.CompareTag("Projectile") &&
             !other.gameObject.CompareTag("MainCamera"))

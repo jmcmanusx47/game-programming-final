@@ -9,8 +9,8 @@ public class EnemyMovement : MonoBehaviour
     public float speed = 10;
     public float minDistance = 2;
     public int damageAmount = 20;
-
-    bool onScreen = false;
+    public bool onScreen = false;
+    public bool track = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +33,7 @@ public class EnemyMovement : MonoBehaviour
             else
             {
                 float distance = Vector3.Distance(transform.position, player.position);
-                if (distance > minDistance)
+                if (distance > minDistance && track)
                 {
                     transform.LookAt(player);
                     transform.position = Vector3.MoveTowards(transform.position, player.position, step);

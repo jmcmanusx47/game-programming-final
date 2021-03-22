@@ -29,7 +29,8 @@ public class EnemyProjectile : MonoBehaviour
             //Deal damage to player.
             other.gameObject.GetComponent<PlayerHealth>().TakeDamage(projectileDamage);
         }
-        if (!other.gameObject.CompareTag("Projectile"))
+        if (!other.gameObject.CompareTag("Projectile") &&
+            !other.gameObject.CompareTag("MainCamera"))
         {
             Destroy(gameObject);
         }

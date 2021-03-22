@@ -13,6 +13,7 @@ public class EnemyAttack : MonoBehaviour
 
     public float cd;
 
+    bool onScreen = false;
     void Start()
     {
         cd = 0;
@@ -21,7 +22,8 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cd <= 0 && !gameObject.GetComponent<EnemyHealth>().enemyDead)
+        if (cd <= 0 && !gameObject.GetComponent<EnemyHealth>().enemyDead &&
+            onScreen)
         {
             projectile =
                 Instantiate(projectilePrefab, transform.position + transform.forward, transform.rotation) as GameObject;
@@ -39,6 +41,14 @@ public class EnemyAttack : MonoBehaviour
         if (cd > 0)
         {
             cd -= Time.deltaTime;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("MainCamera"))
+        {
+            onScreen = true;
         }
     }
 }

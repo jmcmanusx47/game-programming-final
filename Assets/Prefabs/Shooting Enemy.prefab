@@ -239,7 +239,7 @@ MonoBehaviour:
   player: {fileID: 0}
   speed: 0
   minDistance: 2
-  damageAmount: 20
+  damageAmount: 0
   onScreen: 0
   track: 0
 --- !u!1 &8639071924563599544

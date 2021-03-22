@@ -10,6 +10,7 @@ public class EnemyMovement : MonoBehaviour
     public float minDistance = 2;
     public int damageAmount = 20;
 
+    bool onScreen = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gameObject.GetComponent<EnemyHealth>().enemyDead)
+        if (!gameObject.GetComponent<EnemyHealth>().enemyDead && onScreen)
         {
             float step = speed * Time.deltaTime;
             if (transform.position.z <= player.transform.position.z)
@@ -48,6 +49,10 @@ public class EnemyMovement : MonoBehaviour
         {
             var playerHealth = other.GetComponent<PlayerHealth>();
             playerHealth.TakeDamage(damageAmount);
+        }
+        if (other.CompareTag("MainCamera"))
+        {
+            onScreen = true;
         }
     }
 }

@@ -28,7 +28,8 @@ public class DestroyProjectile : MonoBehaviour
         {
             other.gameObject.GetComponent<EnemyHealth>().TakeDamage(projectileDamage);
         }
-        if (!other.gameObject.CompareTag("Projectile"))
+        if (!other.gameObject.CompareTag("Projectile") &&
+            !other.gameObject.CompareTag("MainCamera"))
         {
             Destroy(gameObject);
         }

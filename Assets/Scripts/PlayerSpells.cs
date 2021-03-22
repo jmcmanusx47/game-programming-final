@@ -77,7 +77,7 @@ public class PlayerSpells : MonoBehaviour
             ESpell = ESpellSlot.GetComponent<CastSpell>();
             ESpellCost = ESpell.cost;
             EManaCostText.text = ESpellCost.ToString();
-            WSpellIcon = WSpell.icon;
+            ESpellIcon = ESpell.icon;
         }
         else
         {
@@ -90,7 +90,7 @@ public class PlayerSpells : MonoBehaviour
             RSpell = RSpellSlot.GetComponent<CastSpell>();
             RSpellCost = RSpell.cost;
             RManaCostText.text = RSpellCost.ToString();
-            WSpellIcon = WSpell.icon;
+            RSpellIcon = RSpell.icon;
         }
         else
         {
@@ -123,6 +123,7 @@ public class PlayerSpells : MonoBehaviour
                 if (currentMana >= WSpellCost && WSpell != null)
                 {
                     WSpell.SpellEffect();
+                    LoseMana(WSpellCost);
                 }
                 else
                 {
@@ -134,6 +135,7 @@ public class PlayerSpells : MonoBehaviour
                 if (currentMana >= ESpellCost && ESpell != null)
                 {
                     ESpell.SpellEffect();
+                    LoseMana(ESpellCost);
                 }
                 else
                 {
@@ -145,6 +147,7 @@ public class PlayerSpells : MonoBehaviour
                 if (currentMana >= RSpellCost && RSpell != null)
                 {
                     RSpell.SpellEffect();
+                    LoseMana(RSpellCost);
                 }
                 else
                 {

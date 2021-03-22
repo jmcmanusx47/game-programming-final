@@ -8,11 +8,12 @@ public class ShootProjectile : MonoBehaviour
     public GameObject projectilePrefab;
     public float speed = 100;
     GameObject projectile;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        anim = GetComponent<Animator>();
     }
 
 
@@ -21,6 +22,7 @@ public class ShootProjectile : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1") && !gameObject.GetComponent<PlayerHealth>().playerDead)
         {
+            //anim.SetInteger("animState", 2);
             projectile = 
                 Instantiate(projectilePrefab, transform.position + transform.forward, transform.rotation) as GameObject;
 
@@ -29,7 +31,9 @@ public class ShootProjectile : MonoBehaviour
             rb.AddForce(transform.forward * speed, ForceMode.VelocityChange);
 
             projectile.transform.SetParent(GameObject.FindGameObjectWithTag("ProjectileParent").transform);
+
         }
+
         
     }
 

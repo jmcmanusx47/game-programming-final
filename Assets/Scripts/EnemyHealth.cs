@@ -10,7 +10,9 @@ public class EnemyHealth : MonoBehaviour
 
     public int currentHealth;
 
-    public Material deadMateral;
+    Animator anim;
+
+    //public Material deadMateral;
 
 
 
@@ -18,6 +20,7 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth = startingHealth;
         enemyDead = false;
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -45,7 +48,8 @@ public class EnemyHealth : MonoBehaviour
     {
         Debug.Log("Enemy is dead.");
         enemyDead = true;
-        gameObject.GetComponent<MeshRenderer>().material = deadMateral;
+        //gameObject.GetComponent<MeshRenderer>().material = deadMateral;
+        anim.SetInteger("animState", 3);
     }
 
 }

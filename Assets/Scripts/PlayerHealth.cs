@@ -11,18 +11,21 @@ public class PlayerHealth : MonoBehaviour
 
     public int currentHealth;
 
-    public Material deadMateral;
+    //public Material deadMateral;
 
     public Slider healthSlider;
 
     public Text healthText;
+
+    Animator anim;
 
     void Start()
     {
         currentHealth = startingHealth;
         playerDead = false;
         healthSlider.value = currentHealth;
-        healthText.text = currentHealth.ToString(); 
+        healthText.text = currentHealth.ToString();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -54,8 +57,9 @@ public class PlayerHealth : MonoBehaviour
     {
         Debug.Log("Player is dead.");
         playerDead = true;
-        gameObject.GetComponent<MeshRenderer>().material = deadMateral;
-        transform.Rotate(0, 0, 90, Space.Self);
+        //gameObject.GetComponent<MeshRenderer>().material = deadMateral;
+        //transform.Rotate(0, 0, 90, Space.Self);
+        anim.SetInteger("animState", 3);
     }
 
 }

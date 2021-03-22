@@ -15,6 +15,7 @@ public class EnemyHealth : MonoBehaviour
     //public Material deadMateral;
 
 
+    public float xpPoints = 20f;
 
     void Start()
     {
@@ -23,11 +24,11 @@ public class EnemyHealth : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+    /*
     void Update()
     {
 
-    }
+    } */
 
     public void TakeDamage(int damageAmount)
     {
@@ -48,8 +49,18 @@ public class EnemyHealth : MonoBehaviour
     {
         Debug.Log("Enemy is dead.");
         enemyDead = true;
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLevel>().GainExperience(xpPoints);
         //gameObject.GetComponent<MeshRenderer>().material = deadMateral;
         anim.SetInteger("animState", 3);
+        //Destroy(gameObject, 3);
+        
+    }
+   
+
+    private void OnDestroy()
+    {
+        //instantiate particle system prefab.
     }
 
 }

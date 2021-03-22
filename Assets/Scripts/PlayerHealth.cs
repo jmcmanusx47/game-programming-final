@@ -28,10 +28,23 @@ public class PlayerHealth : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+    /*
     void Update()
     {
 
+    } */
+
+    public void GainHealth(int healthAmount)
+    {
+        if (currentHealth > 0)
+        {
+            currentHealth += healthAmount;
+            currentHealth = Mathf.Clamp(currentHealth, 0, startingHealth);
+            healthSlider.value = currentHealth;
+            healthText.text = currentHealth.ToString();
+        }
+
+        Debug.Log("Player's Current health: " + currentHealth);
     }
 
     public void TakeDamage(int damageAmount)
@@ -40,7 +53,7 @@ public class PlayerHealth : MonoBehaviour
         if (currentHealth > 0)
         {
             currentHealth -= damageAmount;
-            Mathf.Clamp(currentHealth, 0, startingHealth);
+            currentHealth = Mathf.Clamp(currentHealth, 0, startingHealth);
             healthSlider.value = currentHealth;
             healthText.text = currentHealth.ToString();
         }

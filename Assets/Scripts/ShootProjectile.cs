@@ -20,11 +20,13 @@ public class ShootProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButtonDown("Fire1") && !gameObject.GetComponent<PlayerHealth>().playerDead)
+        if(Input.GetKeyDown("space") && !gameObject.GetComponent<PlayerHealth>().playerDead)
         {
-            //anim.SetInteger("animState", 2);
+            anim.SetInteger("animState", 2);
+            var pos = transform.position;
+            pos.y += 1.5f;
             projectile = 
-                Instantiate(projectilePrefab, transform.position + transform.forward, transform.rotation) as GameObject;
+                Instantiate(projectilePrefab, pos + transform.forward, transform.rotation) as GameObject;
 
             Rigidbody rb = projectile.GetComponent<Rigidbody>();
 

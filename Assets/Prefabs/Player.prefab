@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 328203157456656337}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -484,7 +484,6 @@ MonoBehaviour:
   startingHealth: 100
   playerDead: 0
   currentHealth: 500
-  deadMateral: {fileID: 0}
   healthSlider: {fileID: 0}
   healthText: {fileID: 0}
 --- !u!114 &328203157456656338

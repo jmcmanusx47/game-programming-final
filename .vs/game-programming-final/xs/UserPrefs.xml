@@ -1,13 +1,14 @@
 ﻿<Properties StartupConfiguration="{E996CE23-175F-2CB9-7A84-8B2C04C31A97}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ShootFireball.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ShootProjectile.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameFlow.cs" Line="51" Column="37" />
-      <File FileName="Assets/Scripts/PlayerHealth.cs" Line="42" Column="56" />
-      <File FileName="Assets/Scripts/PlayerSpells.cs" Line="144" Column="18" />
-      <File FileName="Assets/Scripts/CastSpell.cs" Line="28" Column="50" />
-      <File FileName="Assets/Scripts/SpellEffects.cs" Line="28" Column="1" />
-      <File FileName="Assets/Scripts/FireballMoveScript.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ShootFireball.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameFlow.cs" Line="13" Column="38" />
+      <File FileName="Assets/Scripts/PlayerHealth.cs" />
+      <File FileName="Assets/Scripts/PlayerSpells.cs" />
+      <File FileName="Assets/Scripts/CastSpell.cs" />
+      <File FileName="Assets/Scripts/SpellEffects.cs" />
+      <File FileName="Assets/Scripts/FireballMoveScript.cs" />
+      <File FileName="Assets/Scripts/ShootFireball.cs" />
+      <File FileName="Assets/Scripts/ShootProjectile.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,7 +16,7 @@
           <Node name="game-programming-final" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="ShootFireball.cs" selected="True" />
+                <Node name="ShootProjectile.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -25,7 +26,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="92e4bf85-ae2c-4463-b238-3f0d2119fb6a" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6b224f0f-ebd6-418f-9119-687675af0b9c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

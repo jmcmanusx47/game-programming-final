@@ -25,8 +25,10 @@ public class SpellEffects : MonoBehaviour
 
     public void Fireball()
     {
+        var pos = player.transform.position;
+        pos.y += 1.5f;
         GameObject projectile = Instantiate(gameObject,
-                player.transform.position + player.transform.forward,
+                pos + player.transform.forward,
                 player.transform.rotation);
 
         projectile.transform.SetParent(

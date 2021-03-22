@@ -24,7 +24,7 @@ public class EnemyAttack : MonoBehaviour
         if (cd <= 0 && !gameObject.GetComponent<EnemyHealth>().enemyDead)
         {
             projectile =
-                Instantiate(projectilePrefab, transform.position + transform.forward, transform.rotation) as GameObject;
+                Instantiate(projectilePrefab, transform.position + transform.forward + new Vector3(0, 1.5f, 0), transform.rotation) as GameObject;
 
             Rigidbody rb = projectile.GetComponent<Rigidbody>();
 

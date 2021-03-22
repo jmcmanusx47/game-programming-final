@@ -64,6 +64,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\48 Particle Effect Pack\Script\csDestroyEffect.cs" />
+    <Compile Include="Assets\48 Particle Effect Pack\Script\csMouseOrbit.cs" />
+    <Compile Include="Assets\48 Particle Effect Pack\Script\csParticleEffectPackLightControl.cs" />
+    <Compile Include="Assets\48 Particle Effect Pack\Script\csParticleMove.cs" />
+    <Compile Include="Assets\48 Particle Effect Pack\Script\csShowAllEffect.cs" />
+    <Compile Include="Assets\52SpecialEffectPack\Animation&amp;Script\AnimationSpin.cs" />
+    <Compile Include="Assets\52SpecialEffectPack\Animation&amp;Script\DestroyEffect.cs" />
+    <Compile Include="Assets\52SpecialEffectPack\Animation&amp;Script\MouseOrbit.cs" />
+    <Compile Include="Assets\52SpecialEffectPack\Animation&amp;Script\ParticleMove.cs" />
+    <Compile Include="Assets\52SpecialEffectPack\Animation&amp;Script\ShowAllEffect.cs" />
+    <Compile Include="Assets\LightningBolt\LightningBoltScript.cs" />
     <Compile Include="Assets\Scripts\CameraBehavior.cs" />
     <Compile Include="Assets\Scripts\CastSpell.cs" />
     <Compile Include="Assets\Scripts\DestroyObject.cs" />
@@ -81,11 +92,13 @@
     <Compile Include="Assets\Scripts\ShootFireball.cs" />
     <Compile Include="Assets\Scripts\ShootProjectile.cs" />
     <Compile Include="Assets\Scripts\SpellEffects.cs" />
+    <None Include="Assets\LightningBolt\Readme.txt" />
     <None Include="Assets\Tiny Fantasy Icons\README.txt" />
     <None Include="Assets\SimpleFantasy\ReadMe.txt" />
     <None Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_1\Shaders\AdditiveMobile_Scroll01.shader" />
     <None Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_1\Shaders\AlphaBlendedMobile_Scroll01.shader" />
     <None Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_1\Shaders\AlphaBlended_EdgeSoft.shader" />
+    <None Include="Assets\SpellBookPreface\ReadMe.txt" />
     <Reference Include="UnityEngine">
       <HintPath>D:/Unity/2019.4.16f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

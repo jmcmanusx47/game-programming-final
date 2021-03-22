@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{E996CE23-175F-2CB9-7A84-8B2C04C31A97}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DestroyProjectile.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/LightningBolt/Readme.txt">
     <Files>
       <File FileName="Assets/Scripts/GameFlow.cs" Line="13" Column="38" />
       <File FileName="Assets/Scripts/PlayerHealth.cs" />
@@ -11,20 +11,40 @@
       <File FileName="Assets/Scripts/ShootProjectile.cs" Line="29" Column="90" />
       <File FileName="Assets/Scripts/EnemyProjectile.cs" Line="33" Column="53" />
       <File FileName="Assets/Scripts/EnemyAttack.cs" Line="26" Column="21" />
-      <File FileName="Assets/Scripts/EnemyMovement.cs" Line="53" Column="41" />
+      <File FileName="Assets/Scripts/EnemyMovement.cs" Line="44" Column="6" />
       <File FileName="Assets/Scripts/DestroyObject.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/DestroyProjectile.cs" Line="32" Column="56" />
+      <File FileName="Assets/Scripts/DestroyProjectile.cs" Line="33" Column="91" />
       <File FileName="Assets/Scripts/EnemyHealth.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/CameraBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets/LightningBolt/LightningBoltScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/52SpecialEffectPack/Animation&amp;Script/csAnimationSpin.cs" Line="5" Column="1" />
+      <File FileName="Assets/52SpecialEffectPack/Animation&amp;Script/csDestroyEffect.cs" Line="6" Column="16" />
+      <File FileName="Assets/52SpecialEffectPack/Animation&amp;Script/csMouseOrbit.cs" Line="4" Column="14" />
+      <File FileName="Assets/52SpecialEffectPack/Animation&amp;Script/csParticleMove.cs" Line="4" Column="14" />
+      <File FileName="Assets/52SpecialEffectPack/Animation&amp;Script/csShowAllEffect.cs" Line="8" Column="1" />
+      <File FileName="Assets/48 Particle Effect Pack/Script/csDestroyEffect.cs" Line="4" Column="16" />
+      <File FileName="Assets/48 Particle Effect Pack/Script/csMouseOrbit.cs" Line="4" Column="16" />
+      <File FileName="Assets/48 Particle Effect Pack/Script/csShowAllEffect.cs" Line="20" Column="7" />
+      <File FileName="Assets/48 Particle Effect Pack/ShurikenEffectEditor/csShurikenEffectChanger.cs" Line="17" Column="14" />
+      <File FileName="Assets/48 Particle Effect Pack/ShurikenEffectEditor/csShurikenEffectEditor.cs" Line="9" Column="52" />
+      <File FileName="Assets/LightningBolt/Readme.txt" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="game-programming-final" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="DestroyProjectile.cs" selected="True" />
+              <Node name="48 Particle Effect Pack" expanded="True" />
+              <Node name="52SpecialEffectPack" expanded="True">
+                <Node name="Animation&amp;Script" expanded="True" />
+                <Node name="Effect" expanded="True" />
               </Node>
+              <Node name="GabrielAguiarProductions" expanded="True" />
+              <Node name="LightningBolt" expanded="True">
+                <Node name="Readme.txt" selected="True" />
+              </Node>
+              <Node name="Scripts" expanded="True" />
+              <Node name="SpellBookPreface" expanded="True" />
             </Node>
           </Node>
         </State>

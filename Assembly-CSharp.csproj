@@ -80,6 +80,8 @@
     <Compile Include="Assets\Scripts\ShootFireball.cs" />
     <Compile Include="Assets\Scripts\ShootProjectile.cs" />
     <Compile Include="Assets\Scripts\SpellEffects.cs" />
+    <None Include="Assets\Tiny Fantasy Icons\README.txt" />
+    <None Include="Assets\SimpleFantasy\ReadMe.txt" />
     <None Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_1\Shaders\AdditiveMobile_Scroll01.shader" />
     <None Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_1\Shaders\AlphaBlendedMobile_Scroll01.shader" />
     <None Include="Assets\GabrielAguiarProductions\Unique_Projectiles_Volume_1\Shaders\AlphaBlended_EdgeSoft.shader" />

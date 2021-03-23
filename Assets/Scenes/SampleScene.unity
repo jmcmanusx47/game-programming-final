@@ -961,6 +961,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2114589756261037326, guid: 0fc8848ae53a99545b236aee124b64fd,
+        type: 3}
+      propertyPath: expText
+      value: 
+      objectReference: {fileID: 1699960639}
+    - target: {fileID: 2114589756261037326, guid: 0fc8848ae53a99545b236aee124b64fd,
+        type: 3}
+      propertyPath: expSlider
+      value: 
+      objectReference: {fileID: 724734273}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fc8848ae53a99545b236aee124b64fd, type: 3}
 --- !u!114 &724734273 stripped

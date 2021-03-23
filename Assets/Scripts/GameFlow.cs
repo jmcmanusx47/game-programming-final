@@ -46,13 +46,13 @@ public class GameFlow : MonoBehaviour
 
     IEnumerator spawnScenery()
     {
-        yield return new WaitForSeconds(2 * spawnSpeed); 
-        
+        yield return new WaitForSeconds(2 * spawnSpeed);
+
         int randomIndexL = Random.Range(0, scenery.Length);
         int randomIndexR = Random.Range(0, scenery.Length);
         GameObject sceneObjectL = scenery[randomIndexL];
         GameObject sceneObjectR = scenery[randomIndexR];
-        
+
         Instantiate(sceneObjectL, nextTreeSpawnLeft, mainTileObj.rotation);
         Instantiate(sceneObjectR, nextTreeSpawnRight, mainTileObj.rotation);
         nextTreeSpawnLeft.z += treeWidth;
@@ -129,19 +129,19 @@ public class GameFlow : MonoBehaviour
             }
         }
 
-            float random = Random.value;
-            float check = 0f;
+        float random = Random.value;
+        float check = 0f;
 
-            for (int i = 0; i < spawnRates.Length; i++)
-            {
+        for (int i = 0; i < spawnRates.Length; i++)
+        {
             spawnRate = spawnRates[i];
             if (float.IsNaN(spawnRate) || spawnRate <= 0f) continue;
-                check += spawnRate / total;
-                if (check >= random) return i;
-            }
-
-            return -1;
+            check += spawnRate / total;
+            if (check >= random) return i;
         }
+
+        return -1;
+    }
 
     private GameObject getRandomSpawnable()
     {

@@ -22,6 +22,9 @@ public class PlayerSpells : MonoBehaviour
     public Image RSpellIcon;
     public Image blankSpellIcon;
 
+    public AudioClip lightSFX;
+    public AudioClip cloudSFX;
+
     int QSpellCost = 0;
     int WSpellCost = 0;
     int ESpellCost = 0;
@@ -123,6 +126,7 @@ public class PlayerSpells : MonoBehaviour
                 if (currentMana >= WSpellCost && WSpell != null)
                 {
                     WSpell.SpellEffect();
+                    AudioSource.PlayClipAtPoint(cloudSFX, transform.position);
                     LoseMana(WSpellCost);
                 }
                 else
@@ -135,6 +139,7 @@ public class PlayerSpells : MonoBehaviour
                 if (currentMana >= ESpellCost && ESpell != null)
                 {
                     ESpell.SpellEffect();
+                    AudioSource.PlayClipAtPoint(lightSFX, transform.position);
                     LoseMana(ESpellCost);
                 }
                 else

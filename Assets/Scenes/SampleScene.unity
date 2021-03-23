@@ -898,6 +898,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 328203157456656338, guid: 0fc8848ae53a99545b236aee124b64fd,
         type: 3}
+      propertyPath: cloudSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 3f7f026334822d542b68aacb6bef8268, type: 3}
+    - target: {fileID: 328203157456656338, guid: 0fc8848ae53a99545b236aee124b64fd,
+        type: 3}
+      propertyPath: lightSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 42337b769657b384c8d7b3d0288f7a8e, type: 3}
+    - target: {fileID: 328203157456656338, guid: 0fc8848ae53a99545b236aee124b64fd,
+        type: 3}
       propertyPath: manaText
       value: 
       objectReference: {fileID: 224814740}
@@ -906,6 +916,11 @@ PrefabInstance:
       propertyPath: ESpellIcon
       value: 
       objectReference: {fileID: 568541835}
+    - target: {fileID: 328203157456656338, guid: 0fc8848ae53a99545b236aee124b64fd,
+        type: 3}
+      propertyPath: ESpellSlot
+      value: 
+      objectReference: {fileID: 106988, guid: 15dec7b07032b2f4aa6f855bfbe120f7, type: 3}
     - target: {fileID: 328203157456656338, guid: 0fc8848ae53a99545b236aee124b64fd,
         type: 3}
       propertyPath: QSpellIcon
@@ -918,9 +933,19 @@ PrefabInstance:
       objectReference: {fileID: 1360903168}
     - target: {fileID: 328203157456656338, guid: 0fc8848ae53a99545b236aee124b64fd,
         type: 3}
+      propertyPath: RSpellSlot
+      value: 
+      objectReference: {fileID: 100008, guid: 0b053bf3ab0b3294ab250931f61fe020, type: 3}
+    - target: {fileID: 328203157456656338, guid: 0fc8848ae53a99545b236aee124b64fd,
+        type: 3}
       propertyPath: WSpellIcon
       value: 
       objectReference: {fileID: 748026383}
+    - target: {fileID: 328203157456656338, guid: 0fc8848ae53a99545b236aee124b64fd,
+        type: 3}
+      propertyPath: WSpellSlot
+      value: 
+      objectReference: {fileID: 100006, guid: 5041c36f748538e4c81569645693fd61, type: 3}
     - target: {fileID: 328203157456656338, guid: 0fc8848ae53a99545b236aee124b64fd,
         type: 3}
       propertyPath: manaSlider
@@ -946,6 +971,11 @@ PrefabInstance:
       propertyPath: WManaCostText
       value: 
       objectReference: {fileID: 1541962984}
+    - target: {fileID: 328203157456656341, guid: 0fc8848ae53a99545b236aee124b64fd,
+        type: 3}
+      propertyPath: deadSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: f9b617091408d1445801878fc7cd46f6, type: 3}
     - target: {fileID: 328203157456656341, guid: 0fc8848ae53a99545b236aee124b64fd,
         type: 3}
       propertyPath: healthText

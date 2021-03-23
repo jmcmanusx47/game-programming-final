@@ -90,7 +90,6 @@
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\PlayerLevel.cs" />
     <Compile Include="Assets\Scripts\PlayerSpells.cs" />
-    <Compile Include="Assets\Scripts\ShootFireball.cs" />
     <Compile Include="Assets\Scripts\ShootProjectile.cs" />
     <Compile Include="Assets\Scripts\SpellEffects.cs" />
     <None Include="Assets\LightningBolt\Readme.txt" />

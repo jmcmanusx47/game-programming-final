@@ -75,6 +75,7 @@ public class PlayerHealth : MonoBehaviour
         //gameObject.GetComponent<MeshRenderer>().material = deadMateral;
         //transform.Rotate(0, 0, 90, Space.Self);
         anim.SetInteger("animState", 3);
+        FindObjectOfType<LevelManager>().LevelLost();
     }
 
 }

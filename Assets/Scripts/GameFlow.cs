@@ -22,6 +22,7 @@ public class GameFlow : MonoBehaviour
     private Vector3 nextTreeSpawnRight;
     private Vector3 spawnPoint;
     private float midPoint;
+    int totalTiles;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,9 +34,11 @@ public class GameFlow : MonoBehaviour
         nextTreeSpawnRight.x = 17;
         spawnPoint = nextTileSpawn;
         midPoint = mainTileLength / 4;
+        totalTiles = 5;
         StartCoroutine(spawnTile());
         StartCoroutine(spawnSpawnables());
         StartCoroutine(spawnScenery());
+        
     }
 
     // Update is called once per frame
@@ -65,6 +68,7 @@ public class GameFlow : MonoBehaviour
         yield return new WaitForSeconds(spawnSpeed);
         Instantiate(mainTileObj, nextTileSpawn, mainTileObj.rotation);
         nextTileSpawn.z += mainTileWidth;
+        totalTiles++;
         StartCoroutine(spawnTile());
     }
 

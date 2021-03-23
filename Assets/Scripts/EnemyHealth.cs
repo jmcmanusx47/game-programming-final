@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
     public bool enemyDead;
 
     public int currentHealth;
+    public GameObject poof;
 
     Animator anim;
 
@@ -53,14 +54,16 @@ public class EnemyHealth : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLevel>().GainExperience(xpPoints);
         //gameObject.GetComponent<MeshRenderer>().material = deadMateral;
         anim.SetInteger("animState", 3);
-        //Destroy(gameObject, 3);
+        var animDuration = anim.GetCurrentAnimatorStateInfo(0).length;
+        Invoke("OnDestroy", animDuration + 1);
         
     }
    
 
     private void OnDestroy()
     {
-        //instantiate particle system prefab.
+        Instantiate(poof, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 
 }

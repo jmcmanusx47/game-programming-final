@@ -12,9 +12,9 @@ public class EnemyHealth : MonoBehaviour
     public GameObject poof;
 
     Animator anim;
-
+    
     //public Material deadMateral;
-
+    private Quaternion preDeathRotation;
 
     public float xpPoints = 20f;
 
@@ -50,7 +50,9 @@ public class EnemyHealth : MonoBehaviour
     {
         Debug.Log("Enemy is dead.");
         enemyDead = true;
-
+        
+        preDeathRotation = Quaternion.Euler(90, 0.0f, 0.0f);
+        
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLevel>().GainExperience(xpPoints);
         //gameObject.GetComponent<MeshRenderer>().material = deadMateral;
         anim.SetInteger("animState", 3);
@@ -62,7 +64,7 @@ public class EnemyHealth : MonoBehaviour
 
     private void OnDestroy()
     {
-        Instantiate(poof, transform.position, transform.rotation);
+        Instantiate(poof, transform.position + new Vector3(0, 0, 1.5f), preDeathRotation);
         Destroy(gameObject);
     }
 

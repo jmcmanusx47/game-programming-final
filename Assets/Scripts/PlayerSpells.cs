@@ -118,7 +118,7 @@ public class PlayerSpells : MonoBehaviour
                     // Spell Fizzle SFX
                 }
             }
-            else if (Input.GetKeyDown("w"))
+            else if (Input.GetKeyDown("e"))
             {
                 if (currentMana >= WSpellCost && WSpell != null)
                 {
@@ -130,7 +130,7 @@ public class PlayerSpells : MonoBehaviour
                     // Spell Fizzle SFX
                 }
             }
-            else if (Input.GetKeyDown("e"))
+            else if (Input.GetKeyDown("r"))
             {
                 if (currentMana >= ESpellCost && ESpell != null)
                 {
@@ -142,7 +142,7 @@ public class PlayerSpells : MonoBehaviour
                     // Spell Fizzle SFX
                 }
             }
-            else if (Input.GetKeyDown("r"))
+            else if (Input.GetKeyDown(KeyCode.LeftShift))
             {
                 if (currentMana >= RSpellCost && RSpell != null)
                 {

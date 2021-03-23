@@ -77,6 +77,7 @@
     <Compile Include="Assets\LightningBolt\LightningBoltScript.cs" />
     <Compile Include="Assets\Scripts\CameraBehavior.cs" />
     <Compile Include="Assets\Scripts\CastSpell.cs" />
+    <Compile Include="Assets\Scripts\CloudKillEffect.cs" />
     <Compile Include="Assets\Scripts\DestroyObject.cs" />
     <Compile Include="Assets\Scripts\DestroyProjectile.cs" />
     <Compile Include="Assets\Scripts\EnemyAttack.cs" />

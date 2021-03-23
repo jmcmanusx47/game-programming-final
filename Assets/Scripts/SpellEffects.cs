@@ -48,6 +48,15 @@ public class SpellEffects : MonoBehaviour
             GameObject.FindGameObjectWithTag("ProjectileParent").transform);
     }
 
+    public void CloudKill()
+    {
+        var pos = player.transform.position;
+        pos.z += 2.5f;
+        GameObject cloud = Instantiate(gameObject, pos,
+            player.transform.rotation);
+        Destroy(cloud, 3f);
+    }
+
     public void LightningBolt()
     {
         SetPlayerStop();
@@ -62,6 +71,17 @@ public class SpellEffects : MonoBehaviour
 
         Destroy(projectile, 0.2f);
         Invoke("SetPlayerStop", 0.75f);
+    }
+
+    public void Heal()
+    {
+        // Cool Spell Effect
+        var pos = player.transform.position;
+        GameObject heal = Instantiate(gameObject, pos,
+            player.transform.rotation);
+        var playerHealth = player.GetComponent<PlayerHealth>();
+        playerHealth.TakeDamage(-50);
+        Destroy(heal, 1f);
     }
 
     public void SetPlayerStop()

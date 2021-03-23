@@ -30,8 +30,10 @@ public class DestroyProjectile : MonoBehaviour
         if (other.gameObject.CompareTag("Enemy"))
         {
             var enemyMove = other.GetComponent<EnemyMovement>();
+            var enemyHealth = other.GetComponent<EnemyHealth>();
+            bool isDead = enemyHealth.enemyDead;
             bool checkOnScreen = enemyMove.onScreen;
-            if (checkOnScreen)
+            if (checkOnScreen && !isDead)
             {
                 other.gameObject.GetComponent<EnemyHealth>().TakeDamage(projectileDamage);
                 var playerSpells = player.GetComponent<PlayerSpells>();

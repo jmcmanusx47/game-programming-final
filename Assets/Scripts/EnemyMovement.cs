@@ -6,17 +6,23 @@ public class EnemyMovement : MonoBehaviour
 {
 
     public Transform player;
-    public float speed = 10;
+    public float speed = 0;
     public float minDistance = 2;
     public int damageAmount = 20;
     public bool onScreen = false;
     public bool track = true;
+    Animator anim;
     // Start is called before the first frame update
     void Start()
     {
         if (player == null)
         {
             player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
+        anim = GetComponent<Animator>();
+        if (speed > 0)
+        {
+            anim.SetInteger("animState", 1);
         }
     }
 

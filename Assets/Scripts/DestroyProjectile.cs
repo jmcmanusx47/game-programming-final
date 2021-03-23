@@ -7,10 +7,13 @@ public class DestroyProjectile : MonoBehaviour
 
     public float delay = 3;
     public int projectileDamage = 20;
+    public int manaRegen = 2;
 
+    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         Destroy(gameObject, delay);
     }
 
@@ -31,6 +34,8 @@ public class DestroyProjectile : MonoBehaviour
             if (checkOnScreen)
             {
                 other.gameObject.GetComponent<EnemyHealth>().TakeDamage(projectileDamage);
+                var playerSpells = player.GetComponent<PlayerSpells>();
+                playerSpells.GainMana(manaRegen);
             }
         }
         if (!other.gameObject.CompareTag("Projectile") &&

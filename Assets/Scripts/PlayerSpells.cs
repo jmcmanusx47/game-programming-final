@@ -160,7 +160,7 @@ public class PlayerSpells : MonoBehaviour
     public void GainMana(int manaRegen)
     {
         currentMana += manaRegen;
-        Mathf.Clamp(currentMana, 0, startingMana);
+        currentMana = Mathf.Clamp(currentMana, 0, startingMana);
         manaSlider.value = currentMana;
         manaText.text = currentMana.ToString();
     }
@@ -168,7 +168,7 @@ public class PlayerSpells : MonoBehaviour
     public void LoseMana(int cost)
     {
         currentMana -= cost;
-        Mathf.Clamp(currentMana, 0, startingMana);
+        currentMana = Mathf.Clamp(currentMana, 0, startingMana);
         manaSlider.value = currentMana;
         manaText.text = currentMana.ToString();
     }

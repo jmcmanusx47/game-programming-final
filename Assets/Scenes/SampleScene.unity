@@ -1051,6 +1051,11 @@ PrefabInstance:
       propertyPath: expSlider
       value: 
       objectReference: {fileID: 724734273}
+    - target: {fileID: 6594293568956273542, guid: 0fc8848ae53a99545b236aee124b64fd,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fc8848ae53a99545b236aee124b64fd, type: 3}
 --- !u!114 &724734273 stripped
@@ -1708,7 +1713,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0d1dc8ade7e63d14da6ea8a209621906,
+      objectReference: {fileID: 21300000, guid: caf7b2475733a6e4480688688406916d,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cac34688f35d44c49a7aa3ac4d92042, type: 3}
@@ -3101,6 +3106,7 @@ MonoBehaviour:
   startingHealth: 100
   enemyDead: 0
   currentHealth: 100
+  poof: {fileID: 0}
   xpPoints: 20
 --- !u!4 &1483355512883909507
 Transform:

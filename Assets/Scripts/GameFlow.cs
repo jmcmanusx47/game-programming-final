@@ -7,6 +7,7 @@ public class GameFlow : MonoBehaviour
     public Transform mainTileObj;
     public int spawnSpeed = 1;
     public int mainTileWidth = 4;
+    public int treeWidth = 17;
     public int mainTileLength = 12;
     public int startingTiles = 5;
     public GameObject[] spawnables;
@@ -14,8 +15,11 @@ public class GameFlow : MonoBehaviour
     public float[] spawnRates;
     public float noSpawnRate = 1.75f;
     public float spawnEnemiesY = 1.5f;
+    public GameObject[] scenery;
 
     private Vector3 nextTileSpawn;
+    private Vector3 nextTreeSpawnLeft;
+    private Vector3 nextTreeSpawnRight;
     private Vector3 spawnPoint;
     private float midPoint;
     // Start is called before the first frame update
@@ -23,16 +27,37 @@ public class GameFlow : MonoBehaviour
     {
         Debug.Log("Make sure spawnables and spawnrates are of same size.");
         nextTileSpawn.z = mainTileWidth * startingTiles;
+        nextTreeSpawnLeft.z = treeWidth;
+        nextTreeSpawnLeft.x = -17;
+        nextTreeSpawnRight.z = treeWidth;
+        nextTreeSpawnRight.x = 17;
         spawnPoint = nextTileSpawn;
         midPoint = mainTileLength / 4;
         StartCoroutine(spawnTile());
         StartCoroutine(spawnSpawnables());
+        StartCoroutine(spawnScenery());
     }
 
     // Update is called once per frame
     void Update()
     {
+
+    }
+
+    IEnumerator spawnScenery()
+    {
+        yield return new WaitForSeconds(2 * spawnSpeed); 
         
+        int randomIndexL = Random.Range(0, scenery.Length);
+        int randomIndexR = Random.Range(0, scenery.Length);
+        GameObject sceneObjectL = scenery[randomIndexL];
+        GameObject sceneObjectR = scenery[randomIndexR];
+        
+        Instantiate(sceneObjectL, nextTreeSpawnLeft, mainTileObj.rotation);
+        Instantiate(sceneObjectR, nextTreeSpawnRight, mainTileObj.rotation);
+        nextTreeSpawnLeft.z += treeWidth;
+        nextTreeSpawnRight.z += treeWidth;
+        StartCoroutine(spawnScenery());
     }
 
     IEnumerator spawnTile()

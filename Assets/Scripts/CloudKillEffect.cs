@@ -18,12 +18,10 @@ public class CloudKillEffect : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log("Colliding!");
         if(other.gameObject.CompareTag("Enemy"))
         {
             var enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
             enemyHealth.TakeDamage(1);
-            Debug.Log(enemyHealth.currentHealth);
         }
     }
 }

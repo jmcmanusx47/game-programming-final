@@ -223,3 +223,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delay: 3
   projectileDamage: 20
+  manaRegen: 2

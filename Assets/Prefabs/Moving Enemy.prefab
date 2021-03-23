@@ -264,7 +264,7 @@ Animator:
   m_GameObject: {fileID: 6867562150427944143}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 34d530461bec694428ff689cbae8692d, type: 3}
-  m_Controller: {fileID: 9100000, guid: 1de385df2ff713a41adfcbbb63b8af91, type: 2}
+  m_Controller: {fileID: 9100000, guid: 03a5db2775015d3439ed4c4484e41e29, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -285,9 +285,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b3a762178f1134d9f21f0b5c6fb109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 100
+  startingHealth: 80
   enemyDead: 0
   currentHealth: 0
+  xpPoints: 30
 --- !u!114 &6867562149438579548
 MonoBehaviour:
   m_ObjectHideFlags: 0

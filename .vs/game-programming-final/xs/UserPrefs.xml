@@ -1,23 +1,25 @@
 ﻿<Properties StartupConfiguration="{E996CE23-175F-2CB9-7A84-8B2C04C31A97}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameFlow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CameraBehavior.cs">
     <Files>
-      <File FileName="Assets/LightningBolt/Readme.txt" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CloudKillEffect.cs" />
-      <File FileName="Assets/48 Particle Effect Pack/Script/csDestroyEffect.cs" />
-      <File FileName="Assets/48 Particle Effect Pack/Script/csMouseOrbit.cs" />
-      <File FileName="Assets/48 Particle Effect Pack/Script/csParticleEffectPackLightControl.cs" />
-      <File FileName="Assets/48 Particle Effect Pack/Script/csParticleMove.cs" />
-      <File FileName="Assets/48 Particle Effect Pack/Script/csShowAllEffect.cs" />
-      <File FileName="Assets/52SpecialEffectPack/Animation&amp;Script/AnimationSpin.cs" />
-      <File FileName="Assets/52SpecialEffectPack/Animation&amp;Script/DestroyEffect.cs" />
-      <File FileName="Assets/Scripts/CameraBehavior.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/DestroyProjectile.cs" Line="36" Column="42" />
-      <File FileName="Assets/Scripts/DestroyObject.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerSpells.cs" Line="171" Column="23" />
-      <File FileName="Assets/Scripts/PlayerHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EnemyMovement.cs" Line="60" Column="6" />
+      <File FileName="Assets/Scripts/EnemyProjectile.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/FireballMoveScript.cs" Line="19" Column="1" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/ShootProjectile.cs" Line="15" Column="1" />
+      <File FileName="Assets/LightningBolt/LightningBoltScript.cs" Line="361" Column="41" />
+      <File FileName="Assets/Scripts/SpellEffects.cs" Line="73" Column="48" />
+      <File FileName="../../../Desktop/GameProgramming/FLA3_JohnHino/Assets/PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DestroyProjectile.cs" Line="50" Column="1" />
+      <File FileName="Assets/Scripts/EnemyAttack.cs" Line="46" Column="1" />
       <File FileName="Assets/Scripts/EnemyHealth.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EnemyAttack.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameFlow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CameraBehavior.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CloudKillEffect.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameFlow.cs" Line="35" Column="39" />
+      <File FileName="Assets/Scripts/PlayerHealth.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerLevel.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerSpells.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DestroyObject.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,7 +27,7 @@
           <Node name="game-programming-final" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="GameFlow.cs" selected="True" />
+                <Node name="CameraBehavior.cs" selected="True" />
               </Node>
             </Node>
           </Node>

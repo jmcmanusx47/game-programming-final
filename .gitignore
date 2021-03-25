@@ -3,3 +3,5 @@ Logs
 Packages
 ProjectSettings
 Temp
+*.meta
+Assets/52SpecialEffectPack/Texture/MagicCircle4.png.meta

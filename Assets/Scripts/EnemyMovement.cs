@@ -49,16 +49,22 @@ public class EnemyMovement : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            var playerHealth = other.GetComponent<PlayerHealth>();
+            Debug.Log("Colliding!");
+            var playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
             playerHealth.TakeDamage(damageAmount);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
         if (other.CompareTag("MainCamera"))
         {
             onScreen = true;
         }
     }
+
 }

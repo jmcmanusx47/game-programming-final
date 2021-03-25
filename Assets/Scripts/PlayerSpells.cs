@@ -16,11 +16,6 @@ public class PlayerSpells : MonoBehaviour
     public Text WManaCostText;
     public Text EManaCostText;
     public Text RManaCostText;
-    public Image QSpellIcon;
-    public Image WSpellIcon;
-    public Image ESpellIcon;
-    public Image RSpellIcon;
-    public Image blankSpellIcon;
 
     public AudioClip lightSFX;
     public AudioClip cloudSFX;
@@ -31,10 +26,10 @@ public class PlayerSpells : MonoBehaviour
     int RSpellCost = 0;
     int currentMana;
     Color manaColor;
-    CastSpell QSpell;
-    CastSpell WSpell;
-    CastSpell ESpell;
-    CastSpell RSpell;
+    SpellEffects QSpell;
+    SpellEffects WSpell;
+    SpellEffects ESpell;
+    SpellEffects RSpell;
 
     // Start is called before the first frame update
     void Start()
@@ -51,54 +46,46 @@ public class PlayerSpells : MonoBehaviour
     {
         if (QSpellSlot != null)
         {
-            QSpell = QSpellSlot.GetComponent<CastSpell>();
+            QSpell = QSpellSlot.GetComponent<SpellEffects>();
             QSpellCost = QSpell.cost;
             QManaCostText.text = QSpellCost.ToString();
-            QSpellIcon = QSpell.icon;
         }
         else
         {
             QManaCostText.text = "";
-            QSpellIcon = blankSpellIcon;
         }
 
         if (WSpellSlot != null)
         {
-            WSpell = WSpellSlot.GetComponent<CastSpell>();
+            WSpell = WSpellSlot.GetComponent<SpellEffects>();
             WSpellCost = WSpell.cost;
             WManaCostText.text = WSpellCost.ToString();
-            WSpellIcon = WSpell.icon;
         }
         else
         {
             WManaCostText.text = "";
-            WSpellIcon = blankSpellIcon;
         }
 
         if (ESpellSlot != null)
         {
-            ESpell = ESpellSlot.GetComponent<CastSpell>();
+            ESpell = ESpellSlot.GetComponent<SpellEffects>();
             ESpellCost = ESpell.cost;
             EManaCostText.text = ESpellCost.ToString();
-            ESpellIcon = ESpell.icon;
         }
         else
         {
             EManaCostText.text = "";
-            ESpellIcon = blankSpellIcon;
         }
 
         if (RSpellSlot != null)
         {
-            RSpell = RSpellSlot.GetComponent<CastSpell>();
+            RSpell = RSpellSlot.GetComponent<SpellEffects>();
             RSpellCost = RSpell.cost;
             RManaCostText.text = RSpellCost.ToString();
-            RSpellIcon = RSpell.icon;
         }
         else
         {
             RManaCostText.text = "";
-            RSpellIcon = blankSpellIcon;
         }
     }
 
@@ -113,7 +100,7 @@ public class PlayerSpells : MonoBehaviour
             {
                 if (currentMana >= QSpellCost && QSpell != null)
                 {
-                    QSpell.SpellEffect();
+                    QSpell.InvokeSpell();
                     LoseMana(QSpellCost);
                 }
                 else
@@ -125,7 +112,7 @@ public class PlayerSpells : MonoBehaviour
             {
                 if (currentMana >= WSpellCost && WSpell != null)
                 {
-                    WSpell.SpellEffect();
+                    WSpell.InvokeSpell();
                     AudioSource.PlayClipAtPoint(cloudSFX, transform.position);
                     LoseMana(WSpellCost);
                 }
@@ -138,7 +125,7 @@ public class PlayerSpells : MonoBehaviour
             {
                 if (currentMana >= ESpellCost && ESpell != null)
                 {
-                    ESpell.SpellEffect();
+                    ESpell.InvokeSpell();
                     AudioSource.PlayClipAtPoint(lightSFX, transform.position);
                     LoseMana(ESpellCost);
                 }
@@ -151,7 +138,7 @@ public class PlayerSpells : MonoBehaviour
             {
                 if (currentMana >= RSpellCost && RSpell != null)
                 {
-                    RSpell.SpellEffect();
+                    RSpell.InvokeSpell();
                     LoseMana(RSpellCost);
                 }
                 else

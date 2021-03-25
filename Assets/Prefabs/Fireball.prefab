@@ -24009,7 +24009,6 @@ GameObject:
   - component: {fileID: 135447165041960418}
   - component: {fileID: 114411837893322254}
   - component: {fileID: 1756997708522908591}
-  - component: {fileID: 2232050347426608394}
   - component: {fileID: 525273306749737788}
   m_Layer: 0
   m_Name: Fireball
@@ -24102,22 +24101,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destroyWait: 8
---- !u!114 &2232050347426608394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846563170864394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f50054a760474507b6bb7f032e952ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spellName: Fireball
-  delay: 0
-  cost: 20
-  icon: {fileID: 0}
 --- !u!114 &525273306749737788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24130,6 +24113,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d91314aecff842e3a563b13da78c93d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellName: Fireball
+  delay: 0
+  cost: 20
 --- !u!1 &1915593564425164
 GameObject:
   m_ObjectHideFlags: 0

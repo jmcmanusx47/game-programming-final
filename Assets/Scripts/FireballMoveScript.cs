@@ -17,7 +17,6 @@ public class FireballMoveScript : MonoBehaviour {
 	public float explosionRadius = 2;
 	public int explosionDamage = 20;
 
-	private float speedRandomness;
 	private Vector3 offset;	
 	private bool collided;
 	private Rigidbody rb;

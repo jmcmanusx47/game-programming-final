@@ -9,11 +9,9 @@ public class DestroyProjectile : MonoBehaviour
     public int projectileDamage = 20;
     public int manaRegen = 2;
 
-    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         Destroy(gameObject, delay);
     }
 
@@ -23,21 +21,30 @@ public class DestroyProjectile : MonoBehaviour
 
     }
 
+
     //There is probably a better place for this function, might be worthwhile to make it its own script for clarity's sake.
     private void OnTriggerEnter(Collider other)
     {
         //MAKE SURE THE ENEMIES ARE ACTUALLY TAGGED OR ELSE IT WONT DO DAMAGE!!!!!
         if (other.gameObject.CompareTag("Enemy"))
         {
-            var enemyMove = other.GetComponent<EnemyMovement>();
-            var enemyHealth = other.GetComponent<EnemyHealth>();
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            GameObject enemy = other.gameObject;
+            var enemyMove = enemy.gameObject.GetComponent<EnemyMovement>();
+            var enemyHealth = enemy.gameObject.GetComponent<EnemyHealth>();
             bool isDead = enemyHealth.enemyDead;
             bool checkOnScreen = enemyMove.onScreen;
             if (checkOnScreen && !isDead)
             {
-                other.gameObject.GetComponent<EnemyHealth>().TakeDamage(projectileDamage);
-                var playerSpells = player.GetComponent<PlayerSpells>();
-                playerSpells.GainMana(manaRegen);
+                enemyHealth.TakeDamage(projectileDamage);
+                if (player != null)
+                {
+                    var playerSpells = player.GetComponent<PlayerSpells>();
+                    if (playerSpells != null)
+                    {
+                        playerSpells.GainMana(manaRegen);
+                    }
+                }
             }
         }
         if (!other.gameObject.CompareTag("Projectile") &&
@@ -46,4 +53,5 @@ public class DestroyProjectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 }

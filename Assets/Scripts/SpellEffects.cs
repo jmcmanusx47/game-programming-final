@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class SpellEffects : MonoBehaviour
 {
+    public string spellName;
+    public float delay;
+    public int cost;
+
     GameObject player;
     bool playerStopped = false;
     float playerSpeed = 0;
@@ -28,7 +32,7 @@ public class SpellEffects : MonoBehaviour
         }
     }
 
-    public void InvokeSpell(string spellName, float delay) 
+    public void InvokeSpell() 
     {
         player = GameObject.FindGameObjectWithTag("Player");
         controller = player.GetComponent<PlayerController>();
@@ -66,8 +70,8 @@ public class SpellEffects : MonoBehaviour
         lightningScript.EndPosition.x = pos.x;
         lightningScript.StartPosition.z = pos.z;
         lightningScript.EndPosition.z = pos.z + 40;
-        GameObject projectile = Instantiate(gameObject, pos,
-            player.transform.rotation);
+        var rotate = player.transform.rotation;
+        GameObject projectile = Instantiate(gameObject, pos, rotate);
 
         Destroy(projectile, 0.2f);
         Invoke("SetPlayerStop", 0.75f);

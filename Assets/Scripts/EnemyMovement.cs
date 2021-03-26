@@ -32,7 +32,7 @@ public class EnemyMovement : MonoBehaviour
         if (!gameObject.GetComponent<EnemyHealth>().enemyDead && onScreen)
         {
             float step = speed * Time.deltaTime;
-            if (transform.position.z <= player.transform.position.z)
+            if (transform.position.z <= player.position.z)
             {
                 transform.position = Vector3.MoveTowards(transform.position, Vector3.up, step);
             }
@@ -43,20 +43,37 @@ public class EnemyMovement : MonoBehaviour
                 {
                     transform.LookAt(player);
                     transform.position = Vector3.MoveTowards(transform.position, player.position, step);
+                    anim.SetInteger("animState", 1);
+                }
+                else if (distance < minDistance && track && anim.GetInteger("animState") != 2) {
+                    var playerHealth = player.gameObject.GetComponent<PlayerHealth>();
+                    playerHealth.TakeDamage(damageAmount);
+                    anim.SetInteger("animState", 2);
                 }
             }
         }
+
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.CompareTag("Player"))
+        
+        if (other.gameObject.CompareTag("Player"))
         {
-            var playerHealth = other.GetComponent<PlayerHealth>();
-            playerHealth.TakeDamage(damageAmount);
+            Debug.Log("I collided with the player");
+            //var playerHealth = other.gameObject.GetComponent<PlayerHealth>();
+            //playerHealth.TakeDamage(damageAmount);
+            
         }
-        if (other.CompareTag("MainCamera"))
+        if (other.gameObject.CompareTag("MainCamera"))
+        {
+            onScreen = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.CompareTag("MainCamera"))
         {
             onScreen = true;
         }

@@ -57,12 +57,12 @@ public class EnemyHealth : MonoBehaviour
         //gameObject.GetComponent<MeshRenderer>().material = deadMateral;
         anim.SetInteger("animState", 3);
         var animDuration = anim.GetCurrentAnimatorStateInfo(0).length;
-        Invoke("OnDestroy", animDuration + 1);
+        Invoke("DeathEffect", animDuration + 1);
         
     }
    
 
-    private void OnDestroy()
+    private void DeathEffect()
     {
         Instantiate(poof, transform.position + new Vector3(0, 0, 1.5f), preDeathRotation);
         Destroy(gameObject);

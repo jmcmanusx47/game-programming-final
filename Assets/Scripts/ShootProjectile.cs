@@ -28,6 +28,10 @@ public class ShootProjectile : MonoBehaviour
             projectile = 
                 Instantiate(projectilePrefab, pos + transform.forward, transform.rotation) as GameObject;
 
+            var destroyProjectile =
+                projectile.GetComponent<DestroyProjectile>();
+            destroyProjectile.player = gameObject;
+
             Rigidbody rb = projectile.GetComponent<Rigidbody>();
 
             rb.AddForce(transform.forward * speed, ForceMode.VelocityChange);

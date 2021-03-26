@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 12010332}
   - component: {fileID: 11427938}
   - component: {fileID: 7188858196870212126}
-  - component: {fileID: 9082730294645041393}
   - component: {fileID: -6594056104772170699}
   - component: {fileID: 2812984709613811918}
+  - component: {fileID: 6592745791555383591}
   m_Layer: 0
   m_Name: LightningBolt
   m_TagString: Lightning
@@ -155,9 +155,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartObject: {fileID: 0}
-  StartPosition: {x: 2.254588, y: 1.5, z: 2.5085735}
+  StartPosition: {x: 0.28772193, y: 1.5, z: 6.4370985}
   EndObject: {fileID: 0}
-  EndPosition: {x: 2.254588, y: 1.5, z: 42.508575}
+  EndPosition: {x: 0.28772193, y: 1.5, z: 46.4371}
   Generations: 6
   Duration: 0.03
   ChaosFactor: 0.063
@@ -176,26 +176,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 1
-  m_Height: 25
+  m_Radius: 0.3147472
+  m_Height: 42
   m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9082730294645041393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f50054a760474507b6bb7f032e952ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spellName: LightningBolt
-  delay: 0
-  cost: 30
-  icon: {fileID: 0}
+  m_Center: {x: 0, y: 0, z: 6}
 --- !u!114 &-6594056104772170699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +192,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d91314aecff842e3a563b13da78c93d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellName: LightningBolt
+  delay: 0
+  cost: 30
+  player: {fileID: 0}
 --- !u!54 &2812984709613811918
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -224,6 +212,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6592745791555383591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 106988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 691eabbaec7424e9698941ac94b6a428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  controller: {fileID: 0}
+  delay: 0.2
 --- !u!1 &163122
 GameObject:
   m_ObjectHideFlags: 0

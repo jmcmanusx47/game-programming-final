@@ -5,10 +5,12 @@ using UnityEngine;
 
 public class SpellEffects : MonoBehaviour
 {
-    GameObject player;
-    bool playerStopped = false;
-    float playerSpeed = 0;
-    PlayerController controller;
+
+    public string spellName;
+    public float delay;
+    public int cost;
+    public GameObject player;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,21 +20,15 @@ public class SpellEffects : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerStopped)
-        {
-            controller.speed = 0;
-        }
-        else if (controller != null)
-        {
-            controller.speed = playerSpeed;
-        }
+
     }
 
-    public void InvokeSpell(string spellName, float delay) 
+    public void InvokeSpell(GameObject playerPrefab) 
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        controller = player.GetComponent<PlayerController>();
-        playerSpeed = controller.speed;
+        if (player == null)
+        {
+            player = playerPrefab;
+        }
         Invoke(spellName, delay);
     }
 
@@ -59,7 +55,6 @@ public class SpellEffects : MonoBehaviour
 
     public void LightningBolt()
     {
-        SetPlayerStop();
         var lightningScript = gameObject.GetComponent<LightningBoltScript>();
         var pos = player.transform.position;
         lightningScript.StartPosition.x = pos.x;
@@ -69,24 +64,20 @@ public class SpellEffects : MonoBehaviour
         GameObject projectile = Instantiate(gameObject, pos,
             player.transform.rotation);
 
+        var freeze = gameObject.GetComponent<PlayerFreeze>();
+        freeze.controller = player.GetComponent<PlayerController>();
+        freeze.Freeze();
         Destroy(projectile, 0.2f);
-        Invoke("SetPlayerStop", 0.75f);
     }
 
     public void Heal()
     {
-        // Cool Spell Effect
         var pos = player.transform.position;
         GameObject heal = Instantiate(gameObject, pos,
             player.transform.rotation);
         var playerHealth = player.GetComponent<PlayerHealth>();
         playerHealth.TakeDamage(-50);
-        Destroy(heal, 1f);
-    }
-
-    public void SetPlayerStop()
-    {
-        playerStopped = !playerStopped;
+        Destroy(heal, 1.0f);
     }
 
 }

@@ -12,6 +12,7 @@ public class EnemyMovement : MonoBehaviour
     public bool onScreen = false;
     public bool track = true;
     Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {

@@ -54,7 +54,6 @@ public class EnemyHealth : MonoBehaviour
         preDeathRotation = Quaternion.Euler(90, 0.0f, 0.0f);
         
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerLevel>().GainExperience(xpPoints);
-        //gameObject.GetComponent<MeshRenderer>().material = deadMateral;
         anim.SetInteger("animState", 3);
         var animDuration = anim.GetCurrentAnimatorStateInfo(0).length;
         Invoke("DeathEffect", animDuration + 1);

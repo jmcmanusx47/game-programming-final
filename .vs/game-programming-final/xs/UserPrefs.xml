@@ -1,36 +1,23 @@
 ﻿<Properties StartupConfiguration="{E996CE23-175F-2CB9-7A84-8B2C04C31A97}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PlayerFreeze.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/EnemyHealth.cs">
     <Files>
-      <File FileName="Assets/Scripts/CameraBehavior.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/EnemyMovement.cs" />
-      <File FileName="Assets/Scripts/EnemyProjectile.cs" />
-      <File FileName="Assets/Scripts/FireballMoveScript.cs" />
-      <File FileName="Assets/Scripts/LevelManager.cs" />
-      <File FileName="Assets/Scripts/ShootProjectile.cs" />
-      <File FileName="Assets/LightningBolt/LightningBoltScript.cs" />
-      <File FileName="Assets/Scripts/SpellEffects.cs" />
-      <File FileName="../../../Desktop/GameProgramming/FLA3_JohnHino/Assets/PlayerController.cs" />
-      <File FileName="Assets/Scripts/PlayerController.cs" />
-      <File FileName="Assets/Scripts/DestroyProjectile.cs" />
-      <File FileName="Assets/Scripts/EnemyAttack.cs" />
-      <File FileName="Assets/Scripts/EnemyHealth.cs" />
+      <File FileName="Assets/Scripts/EnemyHealth.cs" Line="56" Column="105" />
       <File FileName="Assets/Scripts/CloudKillEffect.cs" />
-      <File FileName="Assets/Scripts/GameFlow.cs" />
+      <File FileName="Assets/Scripts/GameFlow.cs" Line="90" Column="56" />
       <File FileName="Assets/Scripts/PlayerHealth.cs" />
-      <File FileName="Assets/Scripts/PlayerLevel.cs" />
-      <File FileName="Assets/Scripts/PlayerSpells.cs" />
+      <File FileName="Assets/Scripts/PlayerLevel.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerSpells.cs" Line="145" Column="50" />
       <File FileName="Assets/Scripts/DestroyObject.cs" />
       <File FileName="Assets/PlayerFreeze.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/PlayerFreeze.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerFreeze.cs" Line="23" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="game-programming-final" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="LightningBolt" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="PlayerFreeze.cs" selected="True" />
+                <Node name="EnemyHealth.cs" selected="True" />
               </Node>
             </Node>
           </Node>

@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
 
     public bool playerDead;
 
-    public int currentHealth;
+    public int currentHealth = 100;
 
     //public Material deadMateral;
 
@@ -22,7 +22,10 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-        currentHealth = startingHealth;
+
+        currentHealth = GlobalControl.Instance.currentHealth;
+
+        //currentHealth = startingHealth;
         playerDead = false;
         healthSlider.value = currentHealth;
         healthText.text = currentHealth.ToString();
@@ -76,6 +79,11 @@ public class PlayerHealth : MonoBehaviour
         //transform.Rotate(0, 0, 90, Space.Self);
         anim.SetInteger("animState", 3);
         FindObjectOfType<LevelManager>().LevelLost();
+    }
+
+    public void SavePlayerHealth()
+    {
+        GlobalControl.Instance.currentHealth = currentHealth;
     }
 
 }

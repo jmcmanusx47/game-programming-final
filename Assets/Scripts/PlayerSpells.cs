@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerSpells : MonoBehaviour
 {
@@ -158,6 +159,12 @@ public class PlayerSpells : MonoBehaviour
                 {
                     // Spell Fizzle SFX
                 }
+            }
+            else if (Input.GetKeyDown("p"))
+            {
+                FindObjectOfType<PlayerLevel>().SavePlayerXP();
+                FindObjectOfType<PlayerHealth>().SavePlayerHealth();
+                SceneManager.LoadScene(1);
             }
         }
     }

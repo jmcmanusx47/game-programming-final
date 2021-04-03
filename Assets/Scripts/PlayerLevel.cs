@@ -5,16 +5,20 @@ using UnityEngine.UI;
 
 public class PlayerLevel : MonoBehaviour
 {
-    public float currentExperience;
-    public int level;
+    public float currentExperience = 0f;
+    public int level = 0;
     public float expNeededToLevel = 100f;
 
     public Slider expSlider;
     public Text expText;
     void Start()
     {
-        currentExperience = 0f;
-        level = 0;
+
+        currentExperience = GlobalControl.Instance.currentExperience;
+        level = GlobalControl.Instance.level;
+
+        //currentExperience = 0f;
+        //level = 0;
 
         expSlider.value = currentExperience;
         expText.text = currentExperience.ToString();
@@ -41,5 +45,11 @@ public class PlayerLevel : MonoBehaviour
         float xpPercent = (currentExperience / expNeededToLevel) * 100;
         expSlider.value = xpPercent;
         expText.text = currentExperience.ToString();
+    }
+
+    public void SavePlayerXP()
+    {
+        GlobalControl.Instance.currentExperience = currentExperience;
+        GlobalControl.Instance.level = level;
     }
 }

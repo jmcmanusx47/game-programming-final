@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
 
     public int currentHealth = 100;
 
+    public float damageReduction = 1;
+
     //public Material deadMateral;
 
     public Slider healthSlider;
@@ -56,6 +58,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth > 0)
         {
+            damageAmount = Mathf.FloorToInt(damageAmount * damageReduction);
             currentHealth -= damageAmount;
             currentHealth = Mathf.Clamp(currentHealth, 0, startingHealth);
             healthSlider.value = currentHealth;

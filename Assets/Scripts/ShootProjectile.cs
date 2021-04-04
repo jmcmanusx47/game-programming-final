@@ -7,6 +7,9 @@ public class ShootProjectile : MonoBehaviour
 
     public GameObject projectilePrefab;
     public float speed = 100;
+    public float fireRate = .5f;
+
+    float cd;
     GameObject projectile;
     Animator anim;
 
@@ -14,13 +17,14 @@ public class ShootProjectile : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        cd = fireRate;
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("space") && !gameObject.GetComponent<PlayerHealth>().playerDead)
+        if(Input.GetKey("space") && !gameObject.GetComponent<PlayerHealth>().playerDead && cd <= 0)
         {
             anim.SetInteger("animState", 2);
             var pos = transform.position;
@@ -34,9 +38,15 @@ public class ShootProjectile : MonoBehaviour
 
             projectile.transform.SetParent(GameObject.FindGameObjectWithTag("ProjectileParent").transform);
 
+            cd = fireRate;
         }
 
-        
+        if (cd > 0)
+        {
+            cd -= Time.deltaTime;
+        }
+
+
     }
 
 }

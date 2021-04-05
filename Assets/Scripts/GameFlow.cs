@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameFlow : MonoBehaviour
 {
@@ -60,6 +61,7 @@ public class GameFlow : MonoBehaviour
         Instantiate(sceneObjectR, nextTreeSpawnRight, mainTileObj.rotation);
         nextTreeSpawnLeft.z += treeWidth;
         nextTreeSpawnRight.z += treeWidth;
+        
         StartCoroutine(spawnScenery());
     }
 

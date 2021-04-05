@@ -1085,12 +1085,11 @@ MonoBehaviour:
   QSpell: {fileID: 0}
   ESpell: {fileID: 0}
   RSpell: {fileID: 0}
-  ShiftSpell: {fileID: 0}
+  LSSpell: {fileID: 0}
   QSpellIcon: {fileID: 0}
-  ESpelIcon: {fileID: 0}
+  ESpellIcon: {fileID: 0}
   RSpellIcon: {fileID: 0}
-  ShiftSpellIcon: {fileID: 0}
-  pressedButtons: []
+  LSSpellIcon: {fileID: 0}
 --- !u!224 &818474137 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3328570082583055808, guid: 7cac34688f35d44c49a7aa3ac4d92042,
@@ -1785,6 +1784,7 @@ MonoBehaviour:
   spawnables:
   - {fileID: 8639071924563595508, guid: b85d038b6979bc24786a707967d973ff, type: 3}
   - {fileID: 6867562150427944143, guid: 3b6b962c9f8cfea42be2c5021a13221e, type: 3}
+  - {fileID: 7531207836402876966, guid: aa7e4629a36b21d459bd5a98a5fcf6fc, type: 3}
   spawnTileRate: 2
   spawnRates:
   - 3

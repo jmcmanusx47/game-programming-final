@@ -6,6 +6,7 @@ public class DestroyProjectile : MonoBehaviour
 {
 
     public float delay = 3;
+    public int originalProjectileDamage = 20;
     public int projectileDamage = 20;
     public int manaRegen = 2;
 

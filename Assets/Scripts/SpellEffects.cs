@@ -80,7 +80,7 @@ public class SpellEffects : MonoBehaviour
         GameObject heal = Instantiate(gameObject, pos,
             player.transform.rotation);
         var playerHealth = player.GetComponent<PlayerHealth>();
-        playerHealth.TakeDamage(-50);
+        playerHealth.GainHealth(50);
         Destroy(heal, 1f);
     }
 

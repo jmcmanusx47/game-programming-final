@@ -25,13 +25,13 @@ public class GlobalControl : MonoBehaviour
     public GameObject QSpell;
     public GameObject ESpell;
     public GameObject RSpell;
-    public GameObject ShiftSpell;
-    public Image QSpellIcon;
-    public Image ESpelIcon;
-    public Image RSpellIcon;
-    public Image ShiftSpellIcon;
+    public GameObject LSSpell;
+    public Sprite QSpellIcon;
+    public Sprite ESpellIcon;
+    public Sprite RSpellIcon;
+    public Sprite LSSpellIcon;
     // Shop Save
-    public Button[] pressedButtons;
+    public Dictionary<string, GameObject> purchasedSpells;
 
     void Awake()
     {

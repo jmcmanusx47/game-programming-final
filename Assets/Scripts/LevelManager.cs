@@ -8,9 +8,9 @@ public class LevelManager : MonoBehaviour
 {
 
     public Text gameText;
-    public string nextLevel;
     public static bool isGameOver;
-
+    public int shopIndex = 0;
+    public bool isGameWon = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,34 +26,31 @@ public class LevelManager : MonoBehaviour
     public void LevelLost()
     {
         isGameOver = true;
+        isGameWon = false;
         gameText.text = "YOU LOSE!";
         gameText.gameObject.SetActive(true);
 
         //Camera.main.GetComponent<AudioSource>().pitch = 1;
         //AudioSource.PlayClipAtPoint(gameOverSFX, Camera.main.transform.position);
 
-        Invoke("LoadCurrentLevel", 2);
+        Invoke("LoadShop", 2);
     }
 
     public void LevelWon()
     {
         isGameOver = true;
+        isGameWon = true;
         gameText.text = "YOU WIN!";
         gameText.gameObject.SetActive(true);
+        Invoke("LoadShop", 2);
+    }
 
-        if (!string.IsNullOrEmpty(nextLevel))
+    void LoadShop()
+    {
+        if (isGameWon)
         {
-            Invoke("LoadNextLevel", 2);
+            GlobalControl.Instance.currentSceneIndex++;
         }
-    }
-
-    void LoadNextLevel()
-    {
-        SceneManager.LoadScene(nextLevel);
-    }
-
-    void LoadCurrentLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(shopIndex);
     }
 }

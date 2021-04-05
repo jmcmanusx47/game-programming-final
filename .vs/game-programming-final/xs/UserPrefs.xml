@@ -1,10 +1,19 @@
 ﻿<Properties StartupConfiguration="{E996CE23-175F-2CB9-7A84-8B2C04C31A97}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GlobalControl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DestroyProjectile.cs">
     <Files>
-      <File FileName="Assets/Scripts/LevelPointManager.cs" Line="15" Column="19" />
-      <File FileName="Assets/Scripts/LevelManager.cs" />
-      <File FileName="Assets/Scripts/ShopFunctionality.cs" Line="183" Column="53" />
-      <File FileName="Assets/Scripts/GlobalControl.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/LevelPointManager.cs" Line="102" Column="31" />
+      <File FileName="Assets/Scripts/LevelManager.cs" Line="10" Column="26" />
+      <File FileName="Assets/Scripts/ShopFunctionality.cs" Line="177" Column="13" />
+      <File FileName="Assets/Scripts/GlobalControl.cs" Line="23" Column="37" />
+      <File FileName="Assets/Scripts/PlayerLevel.cs" Line="51" Column="12" />
+      <File FileName="Assets/Scripts/PlayerController.cs" Line="7" Column="18" />
+      <File FileName="Assets/Scripts/DestroyProjectile.cs" Line="17" Column="61" />
+      <File FileName="Assets/Scripts/PlayerHealth.cs" Line="30" Column="66" />
+      <File FileName="Assets/Scripts/ShootProjectile.cs" Line="19" Column="59" />
+      <File FileName="Assets/Scripts/PlayerSpells.cs" Line="25" Column="21" />
+      <File FileName="Assets/Scripts/CastSpell.cs" Line="11" Column="23" />
+      <File FileName="Assets/Scripts/SpellEffects.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/DestroyObject.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -12,10 +21,18 @@
           <Node name="game-programming-final" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="GlobalControl.cs" selected="True" />
+                <Node name="DestroyProjectile.cs" selected="True" />
               </Node>
             </Node>
           </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="game-programming-final" expanded="True" selected="True" />
         </State>
       </Pad>
     </Pads>

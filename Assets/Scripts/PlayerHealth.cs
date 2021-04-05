@@ -27,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
 
         currentHealth = GlobalControl.Instance.currentHealth;
 
+        damageReduction = GlobalControl.Instance.damageReduction;
         //currentHealth = startingHealth;
         playerDead = false;
         healthSlider.value = currentHealth;

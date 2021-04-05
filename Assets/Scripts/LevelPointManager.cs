@@ -24,6 +24,13 @@ public class LevelPointManager : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
+        maxMoveSpeed = GlobalControl.Instance.maxMoveSpeed;
+        maxFireRate = GlobalControl.Instance.maxFireRate;
+        maxAttackDamage = GlobalControl.Instance.maxAttackDamage;
+        maxDamageReduction = GlobalControl.Instance.maxDamageReduction;
+        maxManaRegen = GlobalControl.Instance.maxManaRegen;
+        maxSpellSlots = GlobalControl.Instance.maxSpellSlots;
+
         buySpells = new Dictionary<string, Button>();
         if (purchasedSpells == null)
         {
@@ -90,5 +97,18 @@ public class LevelPointManager : MonoBehaviour
     public void UpdateLevelPointText()
     {
         levelPointText.text = "" + levelPoints;
+    }
+
+    public void saveLevelPointManager()
+    {
+        GlobalControl.Instance.maxMoveSpeed = maxMoveSpeed;
+        GlobalControl.Instance.maxFireRate = maxFireRate;
+        GlobalControl.Instance.maxAttackDamage = maxAttackDamage;
+        GlobalControl.Instance.maxDamageReduction = maxDamageReduction;
+        GlobalControl.Instance.maxManaRegen = maxManaRegen;
+        GlobalControl.Instance.maxSpellSlots = maxSpellSlots;
+
+        GlobalControl.Instance.levelPoints = levelPoints;
+
     }
 }

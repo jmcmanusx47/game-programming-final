@@ -28,7 +28,6 @@ public class BossFSM : MonoBehaviour
     float chargecd;
     public int chargeDamage = 50;
 
-    int cameraVelocity;
     GameObject[] wanderPoints;
     Vector3 nextDestination;
     int currentDestinationIndex = 0;
@@ -46,8 +45,7 @@ public class BossFSM : MonoBehaviour
         
         player = GameObject.FindGameObjectWithTag("Player");
         wanderPoints = GameObject.FindGameObjectsWithTag("WanderPoint");
-        cameraVelocity = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraBehavior>().cameraVelocity;
-        Debug.Log(cameraVelocity);
+        
         enemyhealth = GetComponent<EnemyHealth>();
         anim = GetComponent<Animator>();
 
@@ -63,13 +61,17 @@ public class BossFSM : MonoBehaviour
     void Update()
     {
         
-        if (!enemyhealth.enemyDead && onScreen)
+        if (onScreen)
         {
-            //GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraBehavior>().SetVelocity(0);
+
             
 
             health = enemyhealth.currentHealth;
 
+            if (health <= 0)
+            {
+                currentState = FSMStates.Dead;
+            }
 
             switch (currentState)
             {
@@ -93,10 +95,7 @@ public class BossFSM : MonoBehaviour
             }
             
 
-            if (health <= 0)
-            {
-                currentState = FSMStates.Dead;
-            }
+            
         }
 
 
@@ -172,9 +171,7 @@ public class BossFSM : MonoBehaviour
             chargecd -= Time.deltaTime;
         }
 
-        //FaceTarget(nextDestination);
 
-        //agent.SetDestination(nextDestination);
 
         transform.position = Vector3.MoveTowards(transform.position, nextDestination, enemySpeed * Time.deltaTime);
     }
@@ -216,7 +213,8 @@ public class BossFSM : MonoBehaviour
 
     void UpdateDeadState()
     {
-        //GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraBehavior>().SetVelocity(cameraVelocity);
+
+
         GameObject.FindObjectOfType<LevelManager>().LevelWon();
 
         //Enemy health deals with death stuff.

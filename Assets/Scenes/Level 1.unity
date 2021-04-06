@@ -1659,6 +1659,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 328203157456638578, guid: 0fc8848ae53a99545b236aee124b64fd,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 328203157456656337, guid: 0fc8848ae53a99545b236aee124b64fd,
         type: 3}
       propertyPath: distanceToWin
@@ -3016,6 +3021,10 @@ MonoBehaviour:
   scenery:
   - {fileID: 1417481550}
   - {fileID: 1171806453}
+  bossRoom: {fileID: 4258386613365113057, guid: 67f94ce33182a39489cd658bcb794fc1,
+    type: 3}
+  distanceToBoss: 30
+  levelRequiredForBoss: 2
 --- !u!114 &1541962984 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3769698173049042535, guid: 7cac34688f35d44c49a7aa3ac4d92042,

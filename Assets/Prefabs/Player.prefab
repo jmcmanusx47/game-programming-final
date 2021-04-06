@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 328203157459879820}
   m_Layer: 0
   m_Name: SF_Character_Knight_Hood
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -455,6 +455,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4797981753217468120, guid: 43bb3bcb3ff13894cb71afd78e0bf6f6,
     type: 3}
   speed: 50
+  fireRate: 0.5
 --- !u!114 &328203157456656341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,9 +471,11 @@ MonoBehaviour:
   startingHealth: 100
   playerDead: 0
   currentHealth: 500
+  damageReduction: 1
   healthSlider: {fileID: 0}
   healthText: {fileID: 0}
   deadSFX: {fileID: 0}
+  damageSFX: {fileID: 0}
 --- !u!114 &328203157456656338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,6 +504,7 @@ MonoBehaviour:
   ESpellIcon: {fileID: 0}
   RSpellIcon: {fileID: 0}
   blankSpellIcon: {fileID: 0}
+  unequip: {r: 0, g: 0, b: 0, a: 0}
   lightSFX: {fileID: 0}
   cloudSFX: {fileID: 0}
 --- !u!114 &328203157456656337

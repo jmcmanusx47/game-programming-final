@@ -130,7 +130,7 @@ public class GameFlow : MonoBehaviour
     {
         StopAllCoroutines();
 
-        Instantiate(bossRoom, nextTileSpawn, mainTileObj.rotation);
+        Instantiate(bossRoom, nextTileSpawn - new Vector3(-1.92f, 3.767f, -1f), mainTileObj.rotation);
 
         bossSpawned = true;
     }

@@ -4,19 +4,44 @@ using UnityEngine;
 
 public class StopCamera : MonoBehaviour
 {
-    
+    private bool hasStoppedCamera;
+
+    void Start()
+    {
+        hasStoppedCamera = false;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-
-        if (Physics.Raycast(transform.position, new Vector3(0, 1, 0), out hit, 100f))
+        /*
+        if (!hasStoppedCamera)
         {
-            if (hit.collider.CompareTag("MainCamera"))
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, transform.up, out hit, 100f))
             {
-                print("Stopped Camera");
+                if (hit.collider.CompareTag("MainCamera"))
+                {
+                    print("Stopped Camera, called from: " + transform.position);
+                    GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraBehavior>().SetVelocity(0);
+                    hasStoppedCamera = true;
+
+                }
+            }
+        } 
+        */
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (!hasStoppedCamera)
+        {
+            if (other.CompareTag("MainCamera"))
+            {
+                print("Stopped Camera, called from: " + transform.position);
                 GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraBehavior>().SetVelocity(0);
+                hasStoppedCamera = true;
 
             }
         }

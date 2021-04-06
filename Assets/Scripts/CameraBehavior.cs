@@ -16,4 +16,9 @@ public class CameraBehavior : MonoBehaviour
     {
         
     }
+
+    public void SetVelocity(int newVelocity)
+    {
+        GetComponent<Rigidbody>().velocity = new Vector3(0, 0, newVelocity);
+    }
 }

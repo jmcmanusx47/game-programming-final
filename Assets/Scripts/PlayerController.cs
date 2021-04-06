@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 2.0f;
-    public int distanceToWin = 100;
+    //public int distanceToWin = 100;
     Animator anim;
     Camera cam;
 
@@ -29,10 +29,10 @@ public class PlayerController : MonoBehaviour
             float moveV = Input.GetAxis("Vertical");
             float moveH = Input.GetAxis("Horizontal");
 
-            if (transform.position.z >= distanceToWin)
+            /*if (transform.position.z >= distanceToWin)
             {
                 FindObjectOfType<LevelManager>().LevelWon();
-            }
+            } */
 
             if (moveV != 0 || moveH != 0)
             {

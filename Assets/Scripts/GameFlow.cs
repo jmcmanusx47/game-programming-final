@@ -18,12 +18,20 @@ public class GameFlow : MonoBehaviour
     public float spawnEnemiesY = 1.5f;
     public GameObject[] scenery;
 
+    public GameObject bossRoom;
+    public float distanceToBoss = 20;
+    public int levelRequiredForBoss = 1;
+    private bool bossSpawned;
+
+
     private Vector3 nextTileSpawn;
     private Vector3 nextTreeSpawnLeft;
     private Vector3 nextTreeSpawnRight;
     private Vector3 spawnPoint;
     private float midPoint;
     int totalTiles;
+
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
@@ -39,13 +47,18 @@ public class GameFlow : MonoBehaviour
         StartCoroutine(spawnTile());
         StartCoroutine(spawnSpawnables());
         StartCoroutine(spawnScenery());
-        
+
+        player = GameObject.FindGameObjectWithTag("Player");
+
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (!bossSpawned && player.transform.position.z >= distanceToBoss && player.GetComponent<PlayerLevel>().level >= levelRequiredForBoss)
+        {
+            spawnBossRoom();
+        }
     }
 
     IEnumerator spawnScenery()
@@ -111,6 +124,15 @@ public class GameFlow : MonoBehaviour
             }
         }
         StartCoroutine(spawnSpawnables());
+    }
+
+    private void spawnBossRoom()
+    {
+        StopAllCoroutines();
+
+        Instantiate(bossRoom, nextTileSpawn, mainTileObj.rotation);
+
+        bossSpawned = true;
     }
 
     private float getRandom(float max)

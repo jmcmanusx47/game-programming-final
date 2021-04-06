@@ -48,5 +48,18 @@ public class DestroyProjectile : MonoBehaviour
             gameObject.SetActive(false);
             Destroy(gameObject, 0.5f);
         }
+        if (other.gameObject.CompareTag("Boss"))
+        {
+            var enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
+            var bossFSM = other.gameObject.GetComponent<BossFSM>();
+            bool isDead = enemyHealth.enemyDead;
+            bool checkOnScreen = bossFSM.onScreen;
+            if (checkOnScreen && !isDead)
+            {
+                enemyHealth.TakeDamage(projectileDamage);
+                var playerSpells = player.GetComponent<PlayerSpells>();
+                playerSpells.GainMana(manaRegen);
+            }
+        }
     }
 }

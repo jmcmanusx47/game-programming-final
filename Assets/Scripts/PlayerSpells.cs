@@ -174,12 +174,6 @@ public class PlayerSpells : MonoBehaviour
                     // Spell Fizzle SFX
                 }
             }
-            else if (Input.GetKeyDown("p"))
-            {
-                FindObjectOfType<PlayerLevel>().SavePlayerXP();
-                FindObjectOfType<PlayerHealth>().SavePlayerHealth();
-                SceneManager.LoadScene(1);
-            }
         }
     }
 

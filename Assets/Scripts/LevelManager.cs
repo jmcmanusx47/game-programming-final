@@ -9,7 +9,7 @@ public class LevelManager : MonoBehaviour
 
     public Text gameText;
     public static bool isGameOver;
-    public int shopIndex = 0;
+    public int shopIndex = 1;
     public bool isGameWon = false;
     // Start is called before the first frame update
     void Start()
@@ -49,7 +49,10 @@ public class LevelManager : MonoBehaviour
     {
         if (isGameWon)
         {
-            GlobalControl.Instance.currentSceneIndex++;
+            if (GlobalControl.Instance.currentSceneIndex == 2)
+            {
+                GlobalControl.Instance.currentSceneIndex = 3;
+            }
         }
         SceneManager.LoadScene(shopIndex);
     }

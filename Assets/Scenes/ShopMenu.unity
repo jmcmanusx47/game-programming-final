@@ -21218,7 +21218,7 @@ MonoBehaviour:
   ESpellUnlock: 0
   RSpellUnlock: 0
   LSSpellUnlock: 0
-  currentSceneIndex: 1
+  currentSceneIndex: 2
 --- !u!4 &2095521063
 Transform:
   m_ObjectHideFlags: 0

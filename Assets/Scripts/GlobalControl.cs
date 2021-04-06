@@ -44,7 +44,7 @@ public class GlobalControl : MonoBehaviour
     public bool LSSpellUnlock = false;
 
     // Scene Management
-    public int currentSceneIndex = 1;
+    public int currentSceneIndex = 2;
 
     void Awake()
     {

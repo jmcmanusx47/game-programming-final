@@ -19,6 +19,7 @@ public class PlayerHealth : MonoBehaviour
 
     public Text healthText;
     public AudioClip deadSFX;
+    public AudioClip damageSFX;
 
     Animator anim;
 
@@ -59,6 +60,7 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth > 0)
         {
+            AudioSource.PlayClipAtPoint(damageSFX, transform.position);
             damageAmount = Mathf.FloorToInt(damageAmount * damageReduction);
             currentHealth -= damageAmount;
             currentHealth = Mathf.Clamp(currentHealth, 0, startingHealth);

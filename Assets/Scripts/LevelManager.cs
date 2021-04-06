@@ -11,6 +11,9 @@ public class LevelManager : MonoBehaviour
     public static bool isGameOver;
     public int shopIndex = 1;
     public bool isGameWon = false;
+
+    public AudioClip winSFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +44,7 @@ public class LevelManager : MonoBehaviour
         isGameOver = true;
         isGameWon = true;
         gameText.text = "YOU WIN!";
+        AudioSource.PlayClipAtPoint(winSFX, transform.position);
         gameText.gameObject.SetActive(true);
         Invoke("LoadShop", 2);
     }

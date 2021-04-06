@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float speed = 2.0f;
     public float speedMultiplier = 1f;
     public int distanceToWin = 100;
+
     Animator anim;
     Camera cam;
 

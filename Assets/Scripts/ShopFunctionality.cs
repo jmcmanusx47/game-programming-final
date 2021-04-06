@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class ShopFunctionality : MonoBehaviour
 {
     public float[] moveSpeedIncrements;
@@ -57,6 +58,12 @@ public class ShopFunctionality : MonoBehaviour
                 { "None", null }
             };
         }
+
+        QSpellUnlock = GlobalControl.Instance.QSpellUnlock;
+        ESpellUnlock = GlobalControl.Instance.ESpellUnlock;
+        RSpellUnlock = GlobalControl.Instance.RSpellUnlock;
+        LSSpellUnlock = GlobalControl.Instance.LSSpellUnlock;
+
         var QIcon = GlobalControl.Instance.QSpellIcon;
         var EIcon = GlobalControl.Instance.ESpellIcon;
         var RIcon = GlobalControl.Instance.RSpellIcon;
@@ -288,15 +295,19 @@ public class ShopFunctionality : MonoBehaviour
         {
             case 1:
                 QSpellUnlock = true;
+                GlobalControl.Instance.QSpellUnlock = true;
                 break;
             case 2:
                 ESpellUnlock = true;
+                GlobalControl.Instance.ESpellUnlock = true;
                 break;
             case 3:
                 RSpellUnlock = true;
+                GlobalControl.Instance.RSpellUnlock = true;
                 break;
             case 4:
                 LSSpellUnlock = true;
+                GlobalControl.Instance.LSSpellUnlock = true;
                 break;
             case 5:
                 Debug.Log("Something cool happens");
@@ -320,7 +331,11 @@ public class ShopFunctionality : MonoBehaviour
 
     public void Exit()
     {
-
+        GlobalControl.Instance.purchasedSpells = purchasedSpells;
+        var levelPointManager = gameObject.GetComponent<LevelPointManager>();
+        levelPointManager.saveLevelPointManager();
+        int sceneIndex = GlobalControl.Instance.currentSceneIndex;
+        SceneManager.LoadScene(sceneIndex);
     }
 
     void UpdateShop(int cost, int upgradeId)

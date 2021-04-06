@@ -22,6 +22,7 @@ public class PlayerSpells : MonoBehaviour
     public Image ESpellIcon;
     public Image RSpellIcon;
     public Image blankSpellIcon;
+    public Color unequip;
 
     public AudioClip lightSFX;
     public AudioClip cloudSFX;
@@ -40,6 +41,11 @@ public class PlayerSpells : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        QSpellSlot = GlobalControl.Instance.QSpell;
+        WSpellSlot = GlobalControl.Instance.ESpell;
+        ESpellSlot = GlobalControl.Instance.RSpell;
+        RSpellSlot = GlobalControl.Instance.LSSpell;
+
         currentMana = startingMana;
         manaSlider.value = currentMana;
         manaText.text = currentMana.ToString();
@@ -55,12 +61,14 @@ public class PlayerSpells : MonoBehaviour
             QSpell = QSpellSlot.GetComponent<CastSpell>();
             QSpellCost = QSpell.cost;
             QManaCostText.text = QSpellCost.ToString();
-            QSpellIcon = QSpell.icon;
+            QSpellIcon.sprite = GlobalControl.Instance.QSpellIcon;
+            QSpellIcon.color = Color.white;
         }
         else
         {
             QManaCostText.text = "";
-            QSpellIcon = blankSpellIcon;
+            QSpellIcon.sprite = null;
+            QSpellIcon.color = unequip;
         }
 
         if (WSpellSlot != null)
@@ -68,12 +76,14 @@ public class PlayerSpells : MonoBehaviour
             WSpell = WSpellSlot.GetComponent<CastSpell>();
             WSpellCost = WSpell.cost;
             WManaCostText.text = WSpellCost.ToString();
-            WSpellIcon = WSpell.icon;
+            WSpellIcon.sprite = GlobalControl.Instance.ESpellIcon;
+            WSpellIcon.color = Color.white;
         }
         else
         {
             WManaCostText.text = "";
-            WSpellIcon = blankSpellIcon;
+            WSpellIcon.sprite = null;
+            WSpellIcon.color = unequip;
         }
 
         if (ESpellSlot != null)
@@ -81,12 +91,14 @@ public class PlayerSpells : MonoBehaviour
             ESpell = ESpellSlot.GetComponent<CastSpell>();
             ESpellCost = ESpell.cost;
             EManaCostText.text = ESpellCost.ToString();
-            ESpellIcon = ESpell.icon;
+            ESpellIcon.sprite = GlobalControl.Instance.RSpellIcon;
+            ESpellIcon.color = Color.white;
         }
         else
         {
             EManaCostText.text = "";
-            ESpellIcon = blankSpellIcon;
+            ESpellIcon.sprite = null;
+            ESpellIcon.color = unequip;
         }
 
         if (RSpellSlot != null)
@@ -94,12 +106,14 @@ public class PlayerSpells : MonoBehaviour
             RSpell = RSpellSlot.GetComponent<CastSpell>();
             RSpellCost = RSpell.cost;
             RManaCostText.text = RSpellCost.ToString();
-            RSpellIcon = RSpell.icon;
+            RSpellIcon.sprite = GlobalControl.Instance.LSSpellIcon;
+            RSpellIcon.color = Color.white;
         }
         else
         {
             RManaCostText.text = "";
-            RSpellIcon = blankSpellIcon;
+            RSpellIcon.sprite = null;
+            RSpellIcon.color = unequip;
         }
     }
 
@@ -159,12 +173,6 @@ public class PlayerSpells : MonoBehaviour
                 {
                     // Spell Fizzle SFX
                 }
-            }
-            else if (Input.GetKeyDown("p"))
-            {
-                FindObjectOfType<PlayerLevel>().SavePlayerXP();
-                FindObjectOfType<PlayerHealth>().SavePlayerHealth();
-                SceneManager.LoadScene(1);
             }
         }
     }

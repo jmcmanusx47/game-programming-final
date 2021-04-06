@@ -280,7 +280,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 11459846}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943784449}
+        m_MethodName: SpellSlots
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &11459846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -798,7 +809,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 58716524}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943784449}
+        m_MethodName: SpellSlots
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &58716524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1827,7 +1849,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Option A
+  m_Text: LOCKED
 --- !u!222 &162032497
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2782,7 +2804,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 316408501}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943784449}
+        m_MethodName: PurchaseSpell
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Fireball
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &316408501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5220,11 +5253,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
-      m_Image: {fileID: 0}
-    - m_Text: Option B
-      m_Image: {fileID: 0}
-    - m_Text: Option C
+    - m_Text: LOCKED
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6187,7 +6216,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 607761217}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943784449}
+        m_MethodName: PurchaseSpell
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Frenzy
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &607761217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6527,7 +6567,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Option A
+  m_Text: LOCKED
 --- !u!222 &630613998
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8128,11 +8168,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
-      m_Image: {fileID: 0}
-    - m_Text: Option B
-      m_Image: {fileID: 0}
-    - m_Text: Option C
+    - m_Text: LOCKED
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9801,7 +9837,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 939832429}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943784449}
+        m_MethodName: SpellSlots
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &939832429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11015,7 +11062,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1026079940}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943784449}
+        m_MethodName: PurchaseSpell
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ConeOfCold
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1026079940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11134,7 +11192,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1068179710}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943784449}
+        m_MethodName: SpellSlots
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1068179710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11698,7 +11767,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Option A
+  m_Text: LOCKED
 --- !u!222 &1111322246
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13117,11 +13186,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
-      m_Image: {fileID: 0}
-    - m_Text: Option B
-      m_Image: {fileID: 0}
-    - m_Text: Option C
+    - m_Text: LOCKED
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -13601,7 +13666,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1281535055}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943784449}
+        m_MethodName: Exit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1281535055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14025,7 +14101,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1324071209}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943784449}
+        m_MethodName: PurchaseSpell
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: LightningBolt
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1324071209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14806,7 +14893,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1394057254}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943784449}
+        m_MethodName: PurchaseSpell
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Fortify
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1394057254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15590,7 +15688,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1478807644}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943784449}
+        m_MethodName: PurchaseSpell
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Cloudkill
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1478807644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17231,7 +17340,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1729662580}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943784449}
+        m_MethodName: PurchaseSpell
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: LockOn
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1729662580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17912,7 +18032,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1803381708}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943784449}
+        m_MethodName: PurchaseSpell
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Wither
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1803381708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18258,7 +18389,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1842521154}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943784449}
+        m_MethodName: PurchaseSpell
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ScatterShot
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1842521154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18939,7 +19081,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1901662611}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943784449}
+        m_MethodName: SpellSlots
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1901662611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19617,7 +19770,7 @@ MonoBehaviour:
   - 0.2
   - 0.25
   manaRegenIncrements: 020000000400000006000000080000000a000000
-  spellCost: 3
+  spellCost: 1
   QSpellEquip: {fileID: 780860740}
   ESpellEquip: {fileID: 511740317}
   RSpellEquip: {fileID: 1238052857}
@@ -19659,6 +19812,10 @@ MonoBehaviour:
   ESpellIcon: {fileID: 1951068451}
   RSpellIcon: {fileID: 1927252431}
   LSSpellIcon: {fileID: 884127009}
+  QSpellUnlock: 0
+  ESpellUnlock: 0
+  RSpellUnlock: 0
+  LSSpellUnlock: 0
 --- !u!114 &1943784450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19987,7 +20144,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Option A
+  m_Text: LOCKED
 --- !u!222 &1964902786
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20381,7 +20538,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2059035006}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1943784449}
+        m_MethodName: PurchaseSpell
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Heal
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2059035006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21040,6 +21208,17 @@ MonoBehaviour:
   ESpellIcon: {fileID: 0}
   RSpellIcon: {fileID: 0}
   LSSpellIcon: {fileID: 0}
+  maxMoveSpeed: 0
+  maxFireRate: 0
+  maxAttackDamage: 0
+  maxDamageReduction: 0
+  maxManaRegen: 0
+  maxSpellSlots: 0
+  QSpellUnlock: 0
+  ESpellUnlock: 0
+  RSpellUnlock: 0
+  LSSpellUnlock: 0
+  currentSceneIndex: 2
 --- !u!4 &2095521063
 Transform:
   m_ObjectHideFlags: 0
@@ -21143,11 +21322,7 @@ MonoBehaviour:
   m_Value: 0
   m_Options:
     m_Options:
-    - m_Text: Option A
-      m_Image: {fileID: 0}
-    - m_Text: Option B
-      m_Image: {fileID: 0}
-    - m_Text: Option C
+    - m_Text: LOCKED
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

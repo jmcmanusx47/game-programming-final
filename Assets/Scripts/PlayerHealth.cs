@@ -17,12 +17,21 @@ public class PlayerHealth : MonoBehaviour
 
     public Text healthText;
     public AudioClip deadSFX;
+    public AudioClip damageSFX;
 
     Animator anim;
 
     void Start()
     {
+<<<<<<< Updated upstream
         currentHealth = startingHealth;
+=======
+
+        currentHealth = GlobalControl.Instance.currentHealth;
+
+        damageReduction = GlobalControl.Instance.damageReduction;
+        //currentHealth = startingHealth;
+>>>>>>> Stashed changes
         playerDead = false;
         healthSlider.value = currentHealth;
         healthText.text = currentHealth.ToString();
@@ -53,6 +62,11 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth > 0)
         {
+<<<<<<< Updated upstream
+=======
+            AudioSource.PlayClipAtPoint(damageSFX, transform.position);
+            damageAmount = Mathf.FloorToInt(damageAmount * damageReduction);
+>>>>>>> Stashed changes
             currentHealth -= damageAmount;
             currentHealth = Mathf.Clamp(currentHealth, 0, startingHealth);
             healthSlider.value = currentHealth;

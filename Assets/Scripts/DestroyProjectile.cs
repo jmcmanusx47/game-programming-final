@@ -13,6 +13,11 @@ public class DestroyProjectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+<<<<<<< Updated upstream
+=======
+        manaRegen = GlobalControl.Instance.currentManaRegen;
+        player = GameObject.FindGameObjectWithTag("Player");
+>>>>>>> Stashed changes
         Destroy(gameObject, delay);
     }
 

@@ -16,6 +16,15 @@ public class PlayerSpells : MonoBehaviour
     public Text WManaCostText;
     public Text EManaCostText;
     public Text RManaCostText;
+<<<<<<< Updated upstream
+=======
+    public Image QSpellIcon;
+    public Image WSpellIcon;
+    public Image ESpellIcon;
+    public Image RSpellIcon;
+    public Image blankSpellIcon;
+    public Color unequip;
+>>>>>>> Stashed changes
 
     public AudioClip lightSFX;
     public AudioClip cloudSFX;
@@ -34,6 +43,11 @@ public class PlayerSpells : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        QSpellSlot = GlobalControl.Instance.QSpell;
+        WSpellSlot = GlobalControl.Instance.ESpell;
+        ESpellSlot = GlobalControl.Instance.RSpell;
+        RSpellSlot = GlobalControl.Instance.LSSpell;
+
         currentMana = startingMana;
         manaSlider.value = currentMana;
         manaText.text = currentMana.ToString();
@@ -50,10 +64,20 @@ public class PlayerSpells : MonoBehaviour
             QSpellCost = QSpell.cost;
             QSpell.player = gameObject;
             QManaCostText.text = QSpellCost.ToString();
+<<<<<<< Updated upstream
+=======
+            QSpellIcon.sprite = GlobalControl.Instance.QSpellIcon;
+            QSpellIcon.color = Color.white;
+>>>>>>> Stashed changes
         }
         else
         {
             QManaCostText.text = "";
+<<<<<<< Updated upstream
+=======
+            QSpellIcon.sprite = null;
+            QSpellIcon.color = unequip;
+>>>>>>> Stashed changes
         }
 
         if (WSpellSlot != null)
@@ -62,10 +86,20 @@ public class PlayerSpells : MonoBehaviour
             WSpellCost = WSpell.cost;
             WSpell.player = gameObject;
             WManaCostText.text = WSpellCost.ToString();
+<<<<<<< Updated upstream
+=======
+            WSpellIcon.sprite = GlobalControl.Instance.ESpellIcon;
+            WSpellIcon.color = Color.white;
+>>>>>>> Stashed changes
         }
         else
         {
             WManaCostText.text = "";
+<<<<<<< Updated upstream
+=======
+            WSpellIcon.sprite = null;
+            WSpellIcon.color = unequip;
+>>>>>>> Stashed changes
         }
 
         if (ESpellSlot != null)
@@ -74,10 +108,20 @@ public class PlayerSpells : MonoBehaviour
             ESpellCost = ESpell.cost;
             ESpell.player = gameObject;
             EManaCostText.text = ESpellCost.ToString();
+<<<<<<< Updated upstream
+=======
+            ESpellIcon.sprite = GlobalControl.Instance.RSpellIcon;
+            ESpellIcon.color = Color.white;
+>>>>>>> Stashed changes
         }
         else
         {
             EManaCostText.text = "";
+<<<<<<< Updated upstream
+=======
+            ESpellIcon.sprite = null;
+            ESpellIcon.color = unequip;
+>>>>>>> Stashed changes
         }
 
         if (RSpellSlot != null)
@@ -86,10 +130,20 @@ public class PlayerSpells : MonoBehaviour
             RSpellCost = RSpell.cost;
             RSpell.player = gameObject;
             RManaCostText.text = RSpellCost.ToString();
+<<<<<<< Updated upstream
+=======
+            RSpellIcon.sprite = GlobalControl.Instance.LSSpellIcon;
+            RSpellIcon.color = Color.white;
+>>>>>>> Stashed changes
         }
         else
         {
             RManaCostText.text = "";
+<<<<<<< Updated upstream
+=======
+            RSpellIcon.sprite = null;
+            RSpellIcon.color = unequip;
+>>>>>>> Stashed changes
         }
     }
 

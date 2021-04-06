@@ -5,12 +5,19 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 2.0f;
+<<<<<<< Updated upstream
     public int distanceToWin = 100;
+=======
+    public float speedMultiplier = 1f;
+    public int distanceToWin = 100;
+
+>>>>>>> Stashed changes
     Animator anim;
     Camera cam;
 
     void Start()
     {
+        speedMultiplier = GlobalControl.Instance.currentSpeed;
         anim = GetComponent<Animator>();
         cam = Camera.main;
     }
@@ -45,7 +52,8 @@ public class PlayerController : MonoBehaviour
             
             Vector3 newPosition = new Vector3(moveH, 0.0f, moveV);
             //transform.LookAt(newPosition + transform.position);
-            transform.Translate(newPosition * speed * Time.deltaTime, Space.World);
+            transform.Translate(newPosition * (speed * speedMultiplier)
+                * Time.deltaTime, Space.World);
 
             if (transform.position.z > zMax - 2 || transform.position.z < zMin + 2)
             {

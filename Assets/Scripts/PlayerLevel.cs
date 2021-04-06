@@ -24,6 +24,7 @@ public class PlayerLevel : MonoBehaviour
     {
         Debug.Log("Gained Experience: " + xp);
         currentExperience += xp;
+        GlobalControl.Instance.currentExperience = currentExperience;
         Debug.Log("Current Experience: " + currentExperience);
 
         if (currentExperience >= expNeededToLevel)
@@ -33,6 +34,8 @@ public class PlayerLevel : MonoBehaviour
             //currentExperience = 0;
             expNeededToLevel += 50;
             level++;
+            GlobalControl.Instance.level = level;
+            GlobalControl.Instance.levelPoints++;
 
             gameObject.GetComponent<PlayerHealth>().GainHealth(1000);
             gameObject.GetComponent<PlayerSpells>().GainMana(1000);

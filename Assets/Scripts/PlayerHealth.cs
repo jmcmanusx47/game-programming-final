@@ -13,6 +13,10 @@ public class PlayerHealth : MonoBehaviour
 
     public float damageReduction = 1;
 
+    public float fortifyDuration = 3f;
+
+    float saveReduc;
+
     //public Material deadMateral;
 
     public Slider healthSlider;
@@ -33,6 +37,7 @@ public class PlayerHealth : MonoBehaviour
         playerDead = false;
         healthSlider.value = currentHealth;
         healthText.text = currentHealth.ToString();
+        saveReduc = damageReduction;
         anim = GetComponent<Animator>();
     }
 
@@ -75,6 +80,17 @@ public class PlayerHealth : MonoBehaviour
         }
 
         Debug.Log("Player's Current health: " + currentHealth);
+    }
+
+    public void Fortify(float reduc)
+    {
+        damageReduction *= reduc;
+        Invoke("ResetReduction", fortifyDuration);
+    }
+
+    void ResetReduction()
+    {
+        damageReduction = saveReduc;
     }
 
     void PlayerDies()

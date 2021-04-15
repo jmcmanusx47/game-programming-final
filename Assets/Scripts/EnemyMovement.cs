@@ -11,6 +11,10 @@ public class EnemyMovement : MonoBehaviour
     public int damageAmount = 20;
     public bool onScreen = false;
     public bool track = true;
+    public float slowDuration = 1;
+
+    float saveSpeed;
+    bool slow = false;
     Animator anim;
     // Start is called before the first frame update
     void Start()
@@ -24,6 +28,7 @@ public class EnemyMovement : MonoBehaviour
         {
             anim.SetInteger("animState", 1);
         }
+        saveSpeed = speed;
     }
 
     // Update is called once per frame
@@ -54,6 +59,22 @@ public class EnemyMovement : MonoBehaviour
         }
 
         
+    }
+
+    public void Slow(float slowAmount)
+    {
+        if (!slow)
+        {
+            slow = true;
+            speed *= slowAmount;
+            Invoke("ResetSpeed", slowDuration);
+        }
+    }
+
+    private void ResetSpeed()
+    {
+        speed = saveSpeed;
+        slow = false;
     }
 
     private void OnCollisionEnter(Collision other)

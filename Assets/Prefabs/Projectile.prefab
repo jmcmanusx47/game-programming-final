@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4797981753217468121}
   - component: {fileID: 880977808246862350}
   - component: {fileID: 7006430115209744401}
+  - component: {fileID: -1100050239910485838}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Projectile
@@ -222,5 +223,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 1
+  originalProjectileDamage: 20
   projectileDamage: 20
   manaRegen: 2
+--- !u!114 &-1100050239910485838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4797981753217468120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac753c532a7f4944b604c8b2771cc05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

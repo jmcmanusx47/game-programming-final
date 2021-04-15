@@ -13839,9 +13839,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 400006}
-  - component: {fileID: 114000011771506654}
+  - component: {fileID: 733891044432700215}
+  - component: {fileID: 2286425706436283918}
   m_Layer: 0
-  m_Name: Buff2
+  m_Name: ScatterShot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13864,7 +13865,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114000011771506654
+--- !u!114 &733891044432700215
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13873,6 +13874,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 100006}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db08735561a38424182823d8d175333b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d91314aecff842e3a563b13da78c93d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2286425706436283918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f50054a760474507b6bb7f032e952ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellName: ScatterShot
+  delay: 0
+  cost: 30
+  icon: {fileID: 0}

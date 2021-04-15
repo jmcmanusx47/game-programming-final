@@ -705,7 +705,7 @@ PrefabInstance:
     - target: {fileID: 929378524922424518, guid: a5753c9ec8e1d4b1b8e8b18fbb22deb0,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 929378524922424518, guid: a5753c9ec8e1d4b1b8e8b18fbb22deb0,
         type: 3}
@@ -1959,7 +1959,7 @@ MonoBehaviour:
   currentMana: 0
   currentExperience: 0
   level: 0
-  levelPoints: 0
+  levelPoints: 2
   originalSpeed: 1
   currentSpeed: 1
   originalFireRate: 0.25
@@ -2286,7 +2286,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:

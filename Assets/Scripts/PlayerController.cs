@@ -9,10 +9,12 @@ public class PlayerController : MonoBehaviour
     Animator anim;
     Camera cam;
 
+    float saveSpeed;
     void Start()
     {
         anim = GetComponent<Animator>();
         cam = Camera.main;
+        saveSpeed = speed;
     }
 
     void Update()
@@ -61,6 +63,17 @@ public class PlayerController : MonoBehaviour
 
 
         }
+    }
+
+    public void Frenzy(float fast)
+    {
+        speed *= fast;
+        Invoke("ResetSpeed", 3f);
+    }
+
+    void ResetSpeed()
+    {
+        speed = saveSpeed;
     }
 
 

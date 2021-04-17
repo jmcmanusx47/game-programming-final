@@ -23,13 +23,12 @@ public class WitherFunctionality : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            var enemy = collision.gameObject;
             Debug.Log("Enemy Withered! (Collision)");
-            var enemyMove = collision.gameObject.
-                    GetComponent<EnemyMovement>();
+            var enemyMove = enemy.GetComponent<EnemyMovement>();
             bool checkOnScreen = enemyMove.onScreen;
             if (checkOnScreen)
             {
-                var enemy = collision.gameObject;
                 var enemyHealth = enemy.GetComponent<EnemyHealth>();
                 enemyHealth.TakeDamage(damageAmount);
 
@@ -40,24 +39,4 @@ public class WitherFunctionality : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Enemy"))
-        {
-            Debug.Log("Enemy Withered! (Trigger)");
-            var enemyMove = other.gameObject.
-                    GetComponent<EnemyMovement>();
-            bool checkOnScreen = enemyMove.onScreen;
-            if (checkOnScreen)
-            {
-                var enemy = other.gameObject;
-                var enemyHealth = enemy.GetComponent<EnemyHealth>();
-                enemyHealth.TakeDamage(damageAmount);
-
-                var player = GameObject.FindGameObjectWithTag("Player");
-                var playerHealth = player.GetComponent<PlayerHealth>();
-                playerHealth.GainHealth(healAmount);
-            }
-        }
-    }
 }

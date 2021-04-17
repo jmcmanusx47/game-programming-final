@@ -23,6 +23,8 @@ public class PlayerSpells : MonoBehaviour
     public Image RSpellIcon;
     public Image blankSpellIcon;
     public Color unequip;
+    public bool buff;
+    public bool questionUpgrade;
 
     public AudioClip lightSFX;
     public AudioClip cloudSFX;
@@ -33,10 +35,10 @@ public class PlayerSpells : MonoBehaviour
     int RSpellCost = 0;
     int currentMana;
     Color manaColor;
-    CastSpell QSpell;
-    CastSpell WSpell;
-    CastSpell ESpell;
-    CastSpell RSpell;
+    SpellEffects QSpell;
+    SpellEffects WSpell;
+    SpellEffects ESpell;
+    SpellEffects RSpell;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +47,7 @@ public class PlayerSpells : MonoBehaviour
         WSpellSlot = GlobalControl.Instance.ESpell;
         ESpellSlot = GlobalControl.Instance.RSpell;
         RSpellSlot = GlobalControl.Instance.LSSpell;
+        questionUpgrade = GlobalControl.Instance.questionUpgrade;
 
         currentMana = startingMana;
         manaSlider.value = currentMana;
@@ -58,7 +61,7 @@ public class PlayerSpells : MonoBehaviour
     {
         if (QSpellSlot != null)
         {
-            QSpell = QSpellSlot.GetComponent<CastSpell>();
+            QSpell = QSpellSlot.GetComponent<SpellEffects>();
             QSpellCost = QSpell.cost;
             QManaCostText.text = QSpellCost.ToString();
             QSpellIcon.sprite = GlobalControl.Instance.QSpellIcon;
@@ -73,7 +76,7 @@ public class PlayerSpells : MonoBehaviour
 
         if (WSpellSlot != null)
         {
-            WSpell = WSpellSlot.GetComponent<CastSpell>();
+            WSpell = WSpellSlot.GetComponent<SpellEffects>();
             WSpellCost = WSpell.cost;
             WManaCostText.text = WSpellCost.ToString();
             WSpellIcon.sprite = GlobalControl.Instance.ESpellIcon;
@@ -88,7 +91,7 @@ public class PlayerSpells : MonoBehaviour
 
         if (ESpellSlot != null)
         {
-            ESpell = ESpellSlot.GetComponent<CastSpell>();
+            ESpell = ESpellSlot.GetComponent<SpellEffects>();
             ESpellCost = ESpell.cost;
             EManaCostText.text = ESpellCost.ToString();
             ESpellIcon.sprite = GlobalControl.Instance.RSpellIcon;
@@ -103,7 +106,7 @@ public class PlayerSpells : MonoBehaviour
 
         if (RSpellSlot != null)
         {
-            RSpell = RSpellSlot.GetComponent<CastSpell>();
+            RSpell = RSpellSlot.GetComponent<SpellEffects>();
             RSpellCost = RSpell.cost;
             RManaCostText.text = RSpellCost.ToString();
             RSpellIcon.sprite = GlobalControl.Instance.LSSpellIcon;
@@ -122,13 +125,14 @@ public class PlayerSpells : MonoBehaviour
     {
         UpdateSpellColors();
 
-        if (!gameObject.GetComponent<PlayerHealth>().playerDead)
+        if (!gameObject.GetComponent<PlayerHealth>().playerDead &&
+            (!buff || questionUpgrade))
         {
             if (Input.GetKeyDown("q"))
             {
                 if (currentMana >= QSpellCost && QSpell != null)
                 {
-                    QSpell.SpellEffect();
+                    QSpell.InvokeSpell();
                     LoseMana(QSpellCost);
                 }
                 else
@@ -140,7 +144,7 @@ public class PlayerSpells : MonoBehaviour
             {
                 if (currentMana >= WSpellCost && WSpell != null)
                 {
-                    WSpell.SpellEffect();
+                    WSpell.InvokeSpell();
                     AudioSource.PlayClipAtPoint(cloudSFX, transform.position);
                     LoseMana(WSpellCost);
                 }
@@ -153,7 +157,7 @@ public class PlayerSpells : MonoBehaviour
             {
                 if (currentMana >= ESpellCost && ESpell != null)
                 {
-                    ESpell.SpellEffect();
+                    ESpell.InvokeSpell();
                     AudioSource.PlayClipAtPoint(lightSFX, transform.position);
                     LoseMana(ESpellCost);
                 }
@@ -166,7 +170,7 @@ public class PlayerSpells : MonoBehaviour
             {
                 if (currentMana >= RSpellCost && RSpell != null)
                 {
-                    RSpell.SpellEffect();
+                    RSpell.InvokeSpell();
                     LoseMana(RSpellCost);
                 }
                 else

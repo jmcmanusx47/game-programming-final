@@ -18846,7 +18846,6 @@ GameObject:
   m_Component:
   - component: {fileID: 400008}
   - component: {fileID: 1910635466888327702}
-  - component: {fileID: -5480240571663465345}
   - component: {fileID: 4028977005342225961}
   - component: {fileID: 2177076726612243110}
   - component: {fileID: -3814366886806972687}
@@ -18889,22 +18888,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmount: 20
   healAmount: 5
---- !u!114 &-5480240571663465345
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100008}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f50054a760474507b6bb7f032e952ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spellName: Wither
-  delay: 0
-  cost: 10
-  icon: {fileID: 0}
 --- !u!114 &4028977005342225961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18917,6 +18900,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d91314aecff842e3a563b13da78c93d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellName: Wither
+  delay: 0
+  cost: 0
+  duration: 0
 --- !u!135 &2177076726612243110
 SphereCollider:
   m_ObjectHideFlags: 0

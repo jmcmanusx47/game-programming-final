@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 12010332}
   - component: {fileID: 11427938}
   - component: {fileID: 7188858196870212126}
-  - component: {fileID: 9082730294645041393}
   - component: {fileID: -6594056104772170699}
   - component: {fileID: 2812984709613811918}
   m_Layer: 0
@@ -165,7 +164,7 @@ MonoBehaviour:
   Rows: 1
   Columns: 1
   AnimationMode: 0
-  damage: 40
+  damage: 60
 --- !u!136 &7188858196870212126
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -180,22 +179,6 @@ CapsuleCollider:
   m_Height: 25
   m_Direction: 2
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9082730294645041393
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 106988}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f50054a760474507b6bb7f032e952ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spellName: LightningBolt
-  delay: 0
-  cost: 30
-  icon: {fileID: 0}
 --- !u!114 &-6594056104772170699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +191,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d91314aecff842e3a563b13da78c93d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spellName: LightningBolt
+  delay: 0
+  cost: 30
+  duration: 0
 --- !u!54 &2812984709613811918
 Rigidbody:
   m_ObjectHideFlags: 0

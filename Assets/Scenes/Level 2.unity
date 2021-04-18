@@ -1555,6 +1555,7 @@ MonoBehaviour:
   ESpellIcon: {fileID: 0}
   RSpellIcon: {fileID: 0}
   LSSpellIcon: {fileID: 0}
+  questionUpgrade: 0
   maxMoveSpeed: 0
   maxFireRate: 0
   maxAttackDamage: 0

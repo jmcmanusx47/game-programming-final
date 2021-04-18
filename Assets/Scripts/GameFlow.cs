@@ -35,6 +35,7 @@ public class GameFlow : MonoBehaviour
     int totalTiles;
 
     private GameObject player;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -143,7 +144,19 @@ public class GameFlow : MonoBehaviour
     {
         StopAllCoroutines();
 
-        Instantiate(bossRoom, nextTileSpawn - new Vector3(-1.92f, 3.767f, -1f), mainTileObj.rotation);
+        int currentScene = GlobalControl.Instance.currentSceneIndex;
+        print(currentScene);
+        //level 2 boss room offset: (-.53f, 9.6f, 2f)
+        //level 1 boss room offset (-1.92, 3.767, -1f)
+        if (currentScene == 2)
+        {
+            Instantiate(bossRoom, nextTileSpawn - new Vector3(-1.92f, 3.767f, -1f), mainTileObj.rotation);
+        }
+        else if (currentScene == 3)
+        {
+            Instantiate(bossRoom, nextTileSpawn + new Vector3(-.53f, 9.6f, 2f), mainTileObj.rotation);
+        }
+        
 
         bossSpawned = true;
     }

@@ -30,6 +30,7 @@ public class GlobalControl : MonoBehaviour
     public Sprite ESpellIcon;
     public Sprite RSpellIcon;
     public Sprite LSSpellIcon;
+    public bool questionUpgrade = false;
     // Shop Save
     public Dictionary<string, GameObject> purchasedSpells;
     public int maxMoveSpeed = 0;

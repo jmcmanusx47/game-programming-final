@@ -65,10 +65,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Frenzy(float fast)
+    public void Frenzy(float fast, float duration)
     {
         speed *= fast;
-        Invoke("ResetSpeed", 3f);
+        Invoke("ResetSpeed", duration);
     }
 
     void ResetSpeed()

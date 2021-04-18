@@ -23,7 +23,14 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKey("j"))
+        {
+            LevelWon();
+        }   
+        else if (Input.GetKey("l"))
+        {
+            LevelLost();
+        }
     }
 
     public void LevelLost()
@@ -56,6 +63,10 @@ public class LevelManager : MonoBehaviour
             if (GlobalControl.Instance.currentSceneIndex == 2)
             {
                 GlobalControl.Instance.currentSceneIndex = 3;
+            }
+            else if (GlobalControl.Instance.currentSceneIndex == 3)
+            {
+                GlobalControl.Instance.currentSceneIndex = 4;
             }
         }
         SceneManager.LoadScene(shopIndex);

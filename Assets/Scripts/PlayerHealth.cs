@@ -13,8 +13,6 @@ public class PlayerHealth : MonoBehaviour
 
     public float damageReduction = 1;
 
-    public float fortifyDuration = 3f;
-
     float saveReduc;
 
     //public Material deadMateral;
@@ -82,10 +80,10 @@ public class PlayerHealth : MonoBehaviour
         Debug.Log("Player's Current health: " + currentHealth);
     }
 
-    public void Fortify(float reduc)
+    public void Fortify(float reduc, float duration)
     {
         damageReduction *= reduc;
-        Invoke("ResetReduction", fortifyDuration);
+        Invoke("ResetReduction", duration);
     }
 
     void ResetReduction()

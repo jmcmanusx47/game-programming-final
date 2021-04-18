@@ -5,10 +5,16 @@ using UnityEngine;
 
 public class SpellEffects : MonoBehaviour
 {
+    public string spellName;
+    public float delay;
+    public int cost;
+    public float duration;
+
     GameObject player;
     bool playerStopped = false;
     float playerSpeed = 0;
     PlayerController controller;
+    PlayerSpells spells; 
     // Start is called before the first frame update
     void Start()
     {
@@ -28,10 +34,11 @@ public class SpellEffects : MonoBehaviour
         }
     }
 
-    public void InvokeSpell(string spellName, float delay) 
+    public void InvokeSpell() 
     {
         player = GameObject.FindGameObjectWithTag("Player");
         controller = player.GetComponent<PlayerController>();
+        spells = player.GetComponent<PlayerSpells>();
         playerSpeed = controller.speed;
         Invoke(spellName, delay);
     }
@@ -89,7 +96,9 @@ public class SpellEffects : MonoBehaviour
         var pos = player.transform.position;
         var scatterShot = Instantiate(gameObject, pos, player.transform.rotation);
         var shootProjectile = player.GetComponent<ShootProjectile>();
-        shootProjectile.ScatterShot();
+        shootProjectile.ScatterShot(duration);
+        spells.buff = true;
+        Invoke("CancelBuff", duration);
         Destroy(scatterShot, .75f);
     }
 
@@ -98,7 +107,9 @@ public class SpellEffects : MonoBehaviour
         var pos = player.transform.position;
         var lockOn = Instantiate(gameObject, pos, player.transform.rotation);
         var shootProjectile = player.GetComponent<ShootProjectile>();
-        shootProjectile.LockOn();
+        shootProjectile.LockOn(duration);
+        spells.buff = true;
+        Invoke("CancelBuff", duration);
         Destroy(lockOn, .75f);
     }
 
@@ -108,8 +119,10 @@ public class SpellEffects : MonoBehaviour
         var frenzy= Instantiate(gameObject, pos, player.transform.rotation);
         var shootProjectile = player.GetComponent<ShootProjectile>();
         var playerController = player.GetComponent<PlayerController>();
-        shootProjectile.Frenzy(.5f);
-        playerController.Frenzy(2f);
+        shootProjectile.Frenzy(.5f, duration);
+        playerController.Frenzy(2f, duration);
+        spells.buff = true;
+        Invoke("CancelBuff", duration);
         Destroy(frenzy, .75f);
     }
 
@@ -137,13 +150,20 @@ public class SpellEffects : MonoBehaviour
         var pos = player.transform.position;
         var fortify = Instantiate(gameObject, pos, player.transform.rotation);
         var playerHealth = player.GetComponent<PlayerHealth>();
-        playerHealth.Fortify(.5f);
+        playerHealth.Fortify(.5f, duration);
+        spells.buff = true;
+        Invoke("CancelBuff", duration);
         Destroy(fortify, .75f);
     }
 
     public void SetPlayerStop()
     {
         playerStopped = !playerStopped;
+    }
+
+    public void CancelBuff()
+    {
+        spells.buff = false;
     }
 
 }

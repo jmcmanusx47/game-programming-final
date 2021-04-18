@@ -310,7 +310,7 @@ public class ShopFunctionality : MonoBehaviour
                 GlobalControl.Instance.LSSpellUnlock = true;
                 break;
             case 5:
-                Debug.Log("Something cool happens");
+                GlobalControl.Instance.questionUpgrade = true;
                 break;
             default:
                 Debug.Log("Invalid cost");

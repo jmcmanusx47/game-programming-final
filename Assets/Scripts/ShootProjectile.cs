@@ -84,11 +84,11 @@ public class ShootProjectile : MonoBehaviour
 
     }
 
-    public void Frenzy(float fire)
+    public void Frenzy(float fire, float duration)
     {
+        Debug.Log("Frenzied!");
         fireRate *= fire;
-        Invoke("ResetFire", 3f);
-
+        Invoke("ResetFire", duration);
     }
 
     public void ResetFire()
@@ -96,10 +96,11 @@ public class ShootProjectile : MonoBehaviour
         fireRate = saveFire;
     }
 
-    public void ScatterShot()
+    public void ScatterShot(float duration)
     {
+        Debug.Log("Scatter!");
         scatter = true;
-        Invoke("ResetScatter", 3f);
+        Invoke("ResetScatter", duration);
     }
 
     void ResetScatter()
@@ -107,10 +108,11 @@ public class ShootProjectile : MonoBehaviour
         scatter = false;
     }
 
-    public void LockOn()
+    public void LockOn(float duration)
     {
+        Debug.Log("Locked On!");
         lockOn = true;
-        Invoke("ResetLockOn", 3f);
+        Invoke("ResetLockOn", duration);
     }
 
     private void ResetLockOn()

@@ -14274,7 +14274,6 @@ GameObject:
   - component: {fileID: 3279817059274673272}
   - component: {fileID: 8644365839943124405}
   - component: {fileID: 5238100288997124191}
-  - component: {fileID: 3002561088231246233}
   - component: {fileID: 4120545205362740424}
   m_Layer: 0
   m_Name: ConeOfCold
@@ -14343,22 +14342,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d91314aecff842e3a563b13da78c93d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3002561088231246233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f50054a760474507b6bb7f032e952ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   spellName: ConeOfCold
   delay: 0
-  cost: 30
-  icon: {fileID: 0}
+  cost: 20
+  duration: 0
 --- !u!114 &4120545205362740424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14371,6 +14358,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8d75de6ac42d4e76ab3a497e39b38a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAmount: 40
+  slowAmount: 0.5
 --- !u!1 &100008
 GameObject:
   m_ObjectHideFlags: 0

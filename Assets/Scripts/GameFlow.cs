@@ -17,6 +17,8 @@ public class GameFlow : MonoBehaviour
     public float noSpawnRate = 1.75f;
     public float spawnEnemiesY = 1.5f;
     public GameObject[] scenery;
+    public GameObject ground;
+    public float groundSize;
 
     public GameObject bossRoom;
     public float distanceToBoss = 20;
@@ -24,6 +26,7 @@ public class GameFlow : MonoBehaviour
     private bool bossSpawned;
 
 
+    private Vector3 nextGroundSpawn;
     private Vector3 nextTileSpawn;
     private Vector3 nextTreeSpawnLeft;
     private Vector3 nextTreeSpawnRight;
@@ -36,6 +39,7 @@ public class GameFlow : MonoBehaviour
     void Start()
     {
         Debug.Log("Make sure spawnables and spawnrates are of same size.");
+        nextGroundSpawn.z = groundSize;
         nextTileSpawn.z = mainTileWidth * startingTiles;
         nextTreeSpawnLeft.z = treeWidth;
         nextTreeSpawnLeft.x = -17;
@@ -47,6 +51,7 @@ public class GameFlow : MonoBehaviour
         StartCoroutine(spawnTile());
         StartCoroutine(spawnSpawnables());
         StartCoroutine(spawnScenery());
+        StartCoroutine(spawnGround());
 
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -76,6 +81,14 @@ public class GameFlow : MonoBehaviour
         nextTreeSpawnRight.z += treeWidth;
         
         StartCoroutine(spawnScenery());
+    }
+
+    IEnumerator spawnGround()
+    {
+        yield return new WaitForSeconds(spawnSpeed * 5);
+        Instantiate(ground, nextGroundSpawn, mainTileObj.rotation);
+        nextGroundSpawn.z += groundSize;
+        StartCoroutine(spawnGround());
     }
 
     IEnumerator spawnTile()

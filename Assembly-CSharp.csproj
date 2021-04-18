@@ -74,6 +74,7 @@
      <Compile Include="Assets\Scripts\DestroyObject.cs" />
      <Compile Include="Assets\Scripts\DestroyProjectile.cs" />
      <Compile Include="Assets\Scripts\EnemyAttack.cs" />
+     <Compile Include="Assets\Scripts\EnemyFireball.cs" />
      <Compile Include="Assets\Scripts\EnemyHealth.cs" />
      <Compile Include="Assets\Scripts\EnemyMovement.cs" />
      <Compile Include="Assets\Scripts\EnemyProjectile.cs" />
@@ -90,6 +91,7 @@
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
      <Compile Include="Assets\Scripts\PlayerLevel.cs" />
      <Compile Include="Assets\Scripts\PlayerSpells.cs" />
+     <Compile Include="Assets\Scripts\SecondBossFSM.cs" />
      <Compile Include="Assets\Scripts\ShootProjectile.cs" />
      <Compile Include="Assets\Scripts\ShopFunctionality.cs" />
      <Compile Include="Assets\Scripts\SpellEffects.cs" />

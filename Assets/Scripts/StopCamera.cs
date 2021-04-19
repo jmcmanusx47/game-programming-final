@@ -39,7 +39,7 @@ public class StopCamera : MonoBehaviour
         {
             if (other.CompareTag("MainCamera"))
             {
-                print("Stopped Camera, called from: " + transform.position);
+                //print("Stopped Camera, called from: " + transform.position);
                 GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraBehavior>().SetVelocity(0);
                 hasStoppedCamera = true;
 

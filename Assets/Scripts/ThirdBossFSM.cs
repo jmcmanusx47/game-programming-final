@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SecondBossFSM : MonoBehaviour
+public class ThirdBossFSM : MonoBehaviour
 {
     public enum FSMStates
     {
         Patrol,
         CastingPatrol,
-        SpawningPatrol,
+        SpreadFireball,
+        MovingSpreadFireball,
         Dead
     }
 
@@ -28,16 +29,22 @@ public class SecondBossFSM : MonoBehaviour
     float spawncd;
     public float castingCooldown = 0.5f;
     float castingcd;
+    public float rotation = 45f;
+    Vector3 leftAngle;
+    Vector3 rightAngle;
+    bool rotatingLeft;
 
     GameObject[] wanderPoints;
     Vector3 nextDestination;
     int currentDestinationIndex = 0;
     GameObject spawningPoint;
-    public GameObject[] enemySpawnPoints;
-    public GameObject enemySpawnVFX;
+    public GameObject[] fireballSpawnPoints;
+    
+    //public GameObject enemySpawnVFX;
 
     public EnemyHealth enemyhealth;
     int health;
+    private bool deadAnimPlayed;
 
     
     Animator anim;
@@ -49,9 +56,16 @@ public class SecondBossFSM : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         wanderPoints = GameObject.FindGameObjectsWithTag("WanderPoint");
         spawningPoint = GameObject.FindGameObjectWithTag("SpawningPoint");
-        
+        fireballSpawnPoints = GameObject.FindGameObjectsWithTag("FireballSpawnPoint");
+
+
+        leftAngle = transform.forward + rotation;
+        rightAngle = transform.forward - rotation;
+        rotatingLeft = true;
+
         enemyhealth = GetComponent<EnemyHealth>();
         anim = GetComponent<Animator>();
+        deadAnimPlayed = false;
 
         shootCD = shootCooldown;
         castingcd = castingCooldown;
@@ -75,6 +89,7 @@ public class SecondBossFSM : MonoBehaviour
             if (health <= 0)
             {
                 currentState = FSMStates.Dead;
+
             }
 
             switch (currentState)
@@ -85,9 +100,13 @@ public class SecondBossFSM : MonoBehaviour
                 case FSMStates.CastingPatrol:
                     UpdateCastingPatrolState();
                     break;
-                case FSMStates.SpawningPatrol:
-                    UpdateSpawningState();
+                case FSMStates.SpreadFireball:
+                    UpdateSpreadFireballState();
                     break;
+                case FSMStates.MovingSpreadFireball:
+                    UpdateMovingSpreadFireballState();
+                    break;
+
                 case FSMStates.Dead:
                     UpdateDeadState();
                     break;
@@ -109,6 +128,7 @@ public class SecondBossFSM : MonoBehaviour
     {
         //print("Patrolling!");
 
+        anim.SetBool("Walk Forward", true);
         //anim.SetInteger("animState", 1); //walk animation
 
 
@@ -125,7 +145,7 @@ public class SecondBossFSM : MonoBehaviour
         
         if (shootCD <= 0)
         {
-            GameObject projectile = Instantiate(trackingProjectile, transform.position + transform.forward + new Vector3(0, 1.5f, 0), transform.rotation);
+            GameObject projectile = Instantiate(trackingProjectile, transform.position + transform.forward + new Vector3(0, 1.5f, -5), transform.rotation);
 
             shootCD = shootCooldown;
         }
@@ -143,19 +163,21 @@ public class SecondBossFSM : MonoBehaviour
     void UpdateCastingPatrolState()
     {
         //print("Aggressively Patrolling!");
+        anim.SetBool("Walk Forward", true);
+
         if (Vector3.Distance(transform.position, nextDestination) < 1)
         {
             FindNextPoint();
         }
         else if (elapsedTime <= 0)
         {
-            currentState = FSMStates.SpawningPatrol;
+            currentState = FSMStates.SpreadFireball;
             elapsedTime = phaseChangeTime;
         }
 
         if (castingcd <= 0)
         {
-            Instantiate(spellProjectile, transform.position + transform.forward + new Vector3(0, 1.5f, 0), transform.rotation);
+            Instantiate(spellProjectile, transform.position + transform.forward + new Vector3(0, 1.5f, -5), transform.rotation);
             castingcd = castingCooldown;
         }
 
@@ -169,25 +191,28 @@ public class SecondBossFSM : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, nextDestination, enemySpeed * Time.deltaTime);
     }
 
-    void UpdateSpawningState()
+    void UpdateSpreadFireballState()
     {
+        anim.SetBool("Walk Forward", false);
         nextDestination = spawningPoint.transform.position;
         
         if (elapsedTime <= 0)
         {
-            currentState = FSMStates.Patrol;
+            currentState = FSMStates.MovingSpreadFireball;
             elapsedTime = phaseChangeTime;
             FindNextPoint();
         }
 
+
+
         
 
-        if (spawncd <= 0)
+        if (spawncd <= 0 && Vector3.Distance(transform.position, spawningPoint.transform.position) < 0.5)
         {
-            foreach (GameObject point in enemySpawnPoints)
+            foreach (GameObject point in fireballSpawnPoints)
             {
-                Instantiate(skeletonSpawnPrefab, point.transform.position, point.transform.rotation);
-                Instantiate(enemySpawnVFX, point.transform.position + new Vector3(0, 0, 1.5f), Quaternion.Euler(90, 0.0f, 0.0f));
+                Instantiate(spellProjectile, point.transform.position + new Vector3(0, 1.5f, 0), point.transform.rotation);
+                //Instantiate(enemySpawnVFX, point.transform.position + new Vector3(0, 0, 1.5f), Quaternion.Euler(90, 0.0f, 0.0f));
             }
             spawncd = spawnCooldown;
         }
@@ -200,10 +225,55 @@ public class SecondBossFSM : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, nextDestination, enemySpeed * Time.deltaTime);
     }
 
+    void UpdateMovingSpreadFireballState()
+    {
+        anim.SetTrigger("Fire Breath Attack");
+        nextDestination = spawningPoint.transform.position;
+
+        if (elapsedTime <= 0)
+        {
+            currentState = FSMStates.Patrol;
+            elapsedTime = phaseChangeTime;
+            FindNextPoint();
+        }
+
+        if (Vector3.Distance(transform.rotation.eulerAngles, leftAngle) >= 1)
+        {
+            transform.Rotate(new Vector3(0, rotation * Mathf.Sin(Time.deltaTime), 0), Space.World);
+        }
+        else if (Vector3.Distance(transform.rotation.eulerAngles, right) >= 1)
+        {
+            transform.Rotate(new Vector3(0, -rotation * Mathf.Sin(Time.deltaTime), 0), Space.World);
+        }
+        
+
+        if (spawncd <= 0 && Vector3.Distance(transform.position, spawningPoint.transform.position) < 0.5)
+        {
+            foreach (GameObject point in fireballSpawnPoints)
+            {
+                Instantiate(spellProjectile, point.transform.position + new Vector3(0, 1.5f, 0), point.transform.rotation);
+                //Instantiate(enemySpawnVFX, point.transform.position + new Vector3(0, 0, 1.5f), Quaternion.Euler(90, 0.0f, 0.0f));
+            }
+            spawncd = spawnCooldown;
+        }
+
+        if (spawncd > 0)
+        {
+            spawncd -= Time.deltaTime;
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, nextDestination, enemySpeed * Time.deltaTime);
+    }
+
 
     void UpdateDeadState()
     {
-
+        if (!deadAnimPlayed)
+        {
+            anim.SetTrigger("Die");
+            deadAnimPlayed = true;
+        }
+        
         GameObject.FindObjectOfType<LevelManager>().LevelWon();
 
         //Enemy health deals with death stuff.

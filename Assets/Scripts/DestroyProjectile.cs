@@ -52,9 +52,23 @@ public class DestroyProjectile : MonoBehaviour
         if (other.gameObject.CompareTag("Boss"))
         {
             var enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
-            var bossFSM = other.gameObject.GetComponent<BossFSM>();
+            //var bossFSM = other.gameObject.GetComponent<BossFSM>();
+            bool checkOnScreen;
+            if (GlobalControl.Instance.currentSceneIndex == 2)
+            {
+                checkOnScreen = other.gameObject.GetComponent<BossFSM>().onScreen;
+            }
+            else if (GlobalControl.Instance.currentSceneIndex == 3)
+            {
+                checkOnScreen = other.gameObject.GetComponent<SecondBossFSM>().onScreen;
+            }
+            else 
+            {
+                checkOnScreen = other.gameObject.GetComponent<ThirdBossFSM>().onScreen;
+            }
+            
             bool isDead = enemyHealth.enemyDead;
-            bool checkOnScreen = bossFSM.onScreen;
+            //bool checkOnScreen = bossFSM.onScreen;
             if (checkOnScreen && !isDead)
             {
                 enemyHealth.TakeDamage(projectileDamage);

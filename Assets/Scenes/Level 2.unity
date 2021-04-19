@@ -934,7 +934,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &568541835 stripped
 MonoBehaviour:
@@ -2594,7 +2594,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 448170, guid: f469bb5d4878e0545be36504442967ff, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 448170, guid: f469bb5d4878e0545be36504442967ff, type: 3}
       propertyPath: m_LocalScale.x
@@ -3077,7 +3077,7 @@ MonoBehaviour:
   - {fileID: 10829574}
   ground: {fileID: 1161552750}
   groundSize: 50
-  bossRoom: {fileID: 4258386613365113057, guid: 67f94ce33182a39489cd658bcb794fc1,
+  bossRoom: {fileID: 8927770335172886836, guid: e115724cdb68c8d4c98689607c1891a1,
     type: 3}
   distanceToBoss: 50
   levelRequiredForBoss: 4

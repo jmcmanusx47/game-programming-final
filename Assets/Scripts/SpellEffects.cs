@@ -43,7 +43,7 @@ public class SpellEffects : MonoBehaviour
         Invoke(spellName, delay);
     }
 
-    public void Fireball()
+    public void FireBall()
     {
         var pos = player.transform.position;
         pos.y += 1.5f;

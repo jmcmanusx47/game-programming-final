@@ -51,6 +51,7 @@ MonoBehaviour:
   delay: 0
   cost: 50
   duration: 5
+  spellSFX: {fileID: 8300000, guid: 3bd48efc111d5b24c8a6daa04c3b2391, type: 3}
 --- !u!1 &100002
 GameObject:
   m_ObjectHideFlags: 0

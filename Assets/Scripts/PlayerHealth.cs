@@ -20,7 +20,6 @@ public class PlayerHealth : MonoBehaviour
     public Slider healthSlider;
 
     public Text healthText;
-    public AudioClip deadSFX;
     public AudioClip damageSFX;
 
     Animator anim;
@@ -73,7 +72,6 @@ public class PlayerHealth : MonoBehaviour
 
         if (currentHealth <= 0 && !playerDead)
         {
-            AudioSource.PlayClipAtPoint(deadSFX, transform.position);
             PlayerDies();
         }
 

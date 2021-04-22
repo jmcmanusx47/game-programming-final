@@ -662,8 +662,14 @@
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>C:/Users/sherb/OneDrive/Documents/GitHub/Game-Programming-Final/game-programming-final/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Recorder.Editor">
+ <HintPath>C:/Users/sherb/OneDrive/Documents/GitHub/Game-Programming-Final/game-programming-final/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/sherb/OneDrive/Documents/GitHub/Game-Programming-Final/game-programming-final/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Recorder">
+ <HintPath>C:/Users/sherb/OneDrive/Documents/GitHub/Game-Programming-Final/game-programming-final/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Users/sherb/OneDrive/Documents/GitHub/Game-Programming-Final/game-programming-final/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -676,6 +682,9 @@
  </Reference>
  <Reference Include="Unity.Rider.Editor">
  <HintPath>C:/Users/sherb/OneDrive/Documents/GitHub/Game-Programming-Final/game-programming-final/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Recorder.Base">
+ <HintPath>C:/Users/sherb/OneDrive/Documents/GitHub/Game-Programming-Final/game-programming-final/Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>C:/Users/sherb/OneDrive/Documents/GitHub/Game-Programming-Final/game-programming-final/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>

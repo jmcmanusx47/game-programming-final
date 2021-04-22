@@ -18902,8 +18902,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellName: Wither
   delay: 0
-  cost: 0
-  duration: 0
+  cost: 50
+  duration: 5
+  spellSFX: {fileID: 8300000, guid: f0d0c8e70d5420b44b17738bc531d77c, type: 3}
 --- !u!135 &2177076726612243110
 SphereCollider:
   m_ObjectHideFlags: 0

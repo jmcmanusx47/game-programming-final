@@ -14345,7 +14345,8 @@ MonoBehaviour:
   spellName: ConeOfCold
   delay: 0
   cost: 20
-  duration: 0
+  duration: 5
+  spellSFX: {fileID: 8300000, guid: c09a94f3b94e6cc4a86ff73ff6698df0, type: 3}
 --- !u!114 &4120545205362740424
 MonoBehaviour:
   m_ObjectHideFlags: 0

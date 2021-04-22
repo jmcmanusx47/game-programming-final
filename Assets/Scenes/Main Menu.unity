@@ -697,7 +697,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -147}
-  m_SizeDelta: {x: 1800, y: 500}
+  m_SizeDelta: {x: 2000, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534355070
 MonoBehaviour:
@@ -734,7 +734,8 @@ MonoBehaviour:
   m_Text: Travel onwards and defeat the enemies you encounter along the way by shooting
     projectiles and using spells. Killing enemies earns you mana which can be used
     to cast spells. Killing enemies also increases your level which you can use in
-    the shop to unlock and equip level ups and new spells
+    the shop to unlock and equip level ups and new spells. When you have a buff active,
+    you cannot cast other spells
 --- !u!222 &534355071
 CanvasRenderer:
   m_ObjectHideFlags: 0

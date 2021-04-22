@@ -13880,3 +13880,4 @@ MonoBehaviour:
   delay: 0
   cost: 50
   duration: 5
+  spellSFX: {fileID: 8300000, guid: 200e948f2a9635e42a9aedf0e74147f2, type: 3}

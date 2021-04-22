@@ -9252,7 +9252,8 @@ MonoBehaviour:
   spellName: Fortify
   delay: 0
   cost: 50
-  duration: 0
+  duration: 5
+  spellSFX: {fileID: 8300000, guid: 3f7f026334822d542b68aacb6bef8268, type: 3}
 --- !u!1 &100006
 GameObject:
   m_ObjectHideFlags: 0

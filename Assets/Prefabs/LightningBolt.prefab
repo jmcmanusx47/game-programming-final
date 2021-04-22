@@ -154,9 +154,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   StartObject: {fileID: 0}
-  StartPosition: {x: 2.254588, y: 1.5, z: 2.5085735}
+  StartPosition: {x: 0.008988836, y: 1.5, z: 0.7979953}
   EndObject: {fileID: 0}
-  EndPosition: {x: 2.254588, y: 1.5, z: 42.508575}
+  EndPosition: {x: 0.008988836, y: 1.5, z: 40.797997}
   Generations: 6
   Duration: 0.03
   ChaosFactor: 0.063
@@ -195,6 +195,7 @@ MonoBehaviour:
   delay: 0
   cost: 30
   duration: 0
+  spellSFX: {fileID: 8300000, guid: 09de4c1701b8b814891d6fc603b7d64c, type: 3}
 --- !u!54 &2812984709613811918
 Rigidbody:
   m_ObjectHideFlags: 0

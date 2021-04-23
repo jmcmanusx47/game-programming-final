@@ -45,5 +45,10 @@ public class StopCamera : MonoBehaviour
 
             }
         }
+
+        if(GlobalControl.Instance.currentSceneIndex == 4)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().ToggleOnDragonBoss();
+        }
     }
 }

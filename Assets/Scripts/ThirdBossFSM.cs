@@ -6,41 +6,47 @@ public class ThirdBossFSM : MonoBehaviour
 {
     public enum FSMStates
     {
+        Idle,
         Patrol,
         CastingPatrol,
         SpreadFireball,
         MovingSpreadFireball,
+        Flying,
         Dead
     }
 
     public FSMStates currentState;
-    public GameObject trackingProjectile;
     public GameObject spellProjectile;
-    public GameObject skeletonSpawnPrefab;
     public GameObject player;
     public float enemySpeed = 5f; 
     public bool onScreen;
     public float shootCooldown = 3.0f;
     float shootCD;
-    public float shootSpeed = 100;
     public float phaseChangeTime = 5.0f;
     public float elapsedTime;
     public float spawnCooldown = 2.0f;
     float spawncd;
     public float castingCooldown = 0.5f;
     float castingcd;
+
+    /*
+    These might be used if i was smart but gonna leave them commented for now
     public float rotation = 45f;
     Vector3 leftAngle;
     Vector3 rightAngle;
     bool rotatingLeft;
+    */
 
     GameObject[] wanderPoints;
     Vector3 nextDestination;
     int currentDestinationIndex = 0;
     GameObject spawningPoint;
     public GameObject[] fireballSpawnPoints;
-    
-    //public GameObject enemySpawnVFX;
+    public GameObject[] angleFireballSpawnPoints;
+    public GameObject[] flyingWanderPoints;
+    int currentFlyingDestIndex = 0;
+
+    public GameObject MouthFireballSpawn;
 
     public EnemyHealth enemyhealth;
     int health;
@@ -57,11 +63,12 @@ public class ThirdBossFSM : MonoBehaviour
         wanderPoints = GameObject.FindGameObjectsWithTag("WanderPoint");
         spawningPoint = GameObject.FindGameObjectWithTag("SpawningPoint");
         fireballSpawnPoints = GameObject.FindGameObjectsWithTag("FireballSpawnPoint");
+        angleFireballSpawnPoints = GameObject.FindGameObjectsWithTag("AngleFireballSpawnPoint");
+        flyingWanderPoints = GameObject.FindGameObjectsWithTag("FlyingWanderPoint");
 
-
-        leftAngle = transform.forward + rotation;
-        rightAngle = transform.forward - rotation;
-        rotatingLeft = true;
+        //leftAngle = transform.forward + rotation;
+        //rightAngle = transform.forward - rotation;
+        //rotatingLeft = true;
 
         enemyhealth = GetComponent<EnemyHealth>();
         anim = GetComponent<Animator>();
@@ -71,7 +78,7 @@ public class ThirdBossFSM : MonoBehaviour
         castingcd = castingCooldown;
         elapsedTime = phaseChangeTime;
         health = enemyhealth.currentHealth;
-        currentState = FSMStates.Patrol;
+        currentState = FSMStates.Idle;
         FindNextPoint();
     }
 
@@ -94,6 +101,9 @@ public class ThirdBossFSM : MonoBehaviour
 
             switch (currentState)
             {
+                case FSMStates.Idle:
+                    UpdateIdleState();
+                    break;
                 case FSMStates.Patrol:
                     UpdatePatrolState();
                     break;
@@ -106,7 +116,9 @@ public class ThirdBossFSM : MonoBehaviour
                 case FSMStates.MovingSpreadFireball:
                     UpdateMovingSpreadFireballState();
                     break;
-
+                case FSMStates.Flying:
+                    UpdateFlyingState();
+                    break;
                 case FSMStates.Dead:
                     UpdateDeadState();
                     break;
@@ -124,11 +136,23 @@ public class ThirdBossFSM : MonoBehaviour
 
     }
 
+    void UpdateIdleState()
+    {
+        Invoke("Roar", 0.2f);
+    }
+
+    void Roar()
+    {
+        anim.SetTrigger("Fire Breath Attack");
+        currentState = FSMStates.Patrol;
+    }
+
     void UpdatePatrolState()
     {
         //print("Patrolling!");
 
         anim.SetBool("Walk Forward", true);
+        transform.rotation = Quaternion.Euler(0, 180, 0);
         //anim.SetInteger("animState", 1); //walk animation
 
 
@@ -145,7 +169,7 @@ public class ThirdBossFSM : MonoBehaviour
         
         if (shootCD <= 0)
         {
-            GameObject projectile = Instantiate(trackingProjectile, transform.position + transform.forward + new Vector3(0, 1.5f, -5), transform.rotation);
+            GameObject projectile = Instantiate(spellProjectile, transform.position + transform.forward + new Vector3(0, 1.5f, -5), transform.rotation);
 
             shootCD = shootCooldown;
         }
@@ -209,10 +233,9 @@ public class ThirdBossFSM : MonoBehaviour
 
         if (spawncd <= 0 && Vector3.Distance(transform.position, spawningPoint.transform.position) < 0.5)
         {
-            foreach (GameObject point in fireballSpawnPoints)
+            foreach (GameObject point in angleFireballSpawnPoints)
             {
                 Instantiate(spellProjectile, point.transform.position + new Vector3(0, 1.5f, 0), point.transform.rotation);
-                //Instantiate(enemySpawnVFX, point.transform.position + new Vector3(0, 0, 1.5f), Quaternion.Euler(90, 0.0f, 0.0f));
             }
             spawncd = spawnCooldown;
         }
@@ -227,16 +250,17 @@ public class ThirdBossFSM : MonoBehaviour
 
     void UpdateMovingSpreadFireballState()
     {
-        anim.SetTrigger("Fire Breath Attack");
+        
         nextDestination = spawningPoint.transform.position;
 
         if (elapsedTime <= 0)
         {
-            currentState = FSMStates.Patrol;
-            elapsedTime = phaseChangeTime;
-            FindNextPoint();
+            currentState = FSMStates.Flying;
+            elapsedTime = phaseChangeTime * 4;
+            FindNextFlyingPoint();
         }
 
+        /*
         if (Vector3.Distance(transform.rotation.eulerAngles, leftAngle) >= 1)
         {
             transform.Rotate(new Vector3(0, rotation * Mathf.Sin(Time.deltaTime), 0), Space.World);
@@ -244,16 +268,51 @@ public class ThirdBossFSM : MonoBehaviour
         else if (Vector3.Distance(transform.rotation.eulerAngles, right) >= 1)
         {
             transform.Rotate(new Vector3(0, -rotation * Mathf.Sin(Time.deltaTime), 0), Space.World);
-        }
+        } */
+
+        transform.LookAt(player.transform);
         
 
         if (spawncd <= 0 && Vector3.Distance(transform.position, spawningPoint.transform.position) < 0.5)
         {
+            anim.SetTrigger("Fire Breath Attack");
             foreach (GameObject point in fireballSpawnPoints)
             {
                 Instantiate(spellProjectile, point.transform.position + new Vector3(0, 1.5f, 0), point.transform.rotation);
-                //Instantiate(enemySpawnVFX, point.transform.position + new Vector3(0, 0, 1.5f), Quaternion.Euler(90, 0.0f, 0.0f));
             }
+            spawncd = spawnCooldown * 2;
+        }
+
+        if (spawncd > 0)
+        {
+            spawncd -= Time.deltaTime;
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, nextDestination, enemySpeed * Time.deltaTime);
+    }
+    
+    void UpdateFlyingState()
+    {
+        anim.SetBool("Fly Idle", true);
+
+        if (elapsedTime <= 0)
+        {
+            anim.SetBool("Fly Idle", false);
+            currentState = FSMStates.Patrol;
+            elapsedTime = phaseChangeTime;
+            FindNextPoint();
+        }
+
+        if (Vector3.Distance(transform.position, nextDestination) < 1)
+        {
+            FindNextFlyingPoint();
+        }
+
+        if (spawncd <= 0)
+        {
+            GameObject projectile = Instantiate(spellProjectile, MouthFireballSpawn.transform.position + transform.forward + new Vector3(0, 1.5f, -5), transform.rotation);
+            projectile.transform.LookAt(player.transform);
+
             spawncd = spawnCooldown;
         }
 
@@ -262,6 +321,7 @@ public class ThirdBossFSM : MonoBehaviour
             spawncd -= Time.deltaTime;
         }
 
+        
         transform.position = Vector3.MoveTowards(transform.position, nextDestination, enemySpeed * Time.deltaTime);
     }
 
@@ -285,7 +345,14 @@ public class ThirdBossFSM : MonoBehaviour
 
         currentDestinationIndex = (currentDestinationIndex + 1) % wanderPoints.Length;
 
-        //agent.SetDestination(nextDestination);
+    }
+
+    void FindNextFlyingPoint()
+    {
+        nextDestination = flyingWanderPoints[currentFlyingDestIndex].transform.position;
+        transform.LookAt(flyingWanderPoints[currentFlyingDestIndex].transform.position);
+
+        currentFlyingDestIndex = (currentFlyingDestIndex + 1) % flyingWanderPoints.Length;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -297,5 +364,6 @@ public class ThirdBossFSM : MonoBehaviour
             onScreen = true;
         }
     }
+
 
 }

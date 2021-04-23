@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     //public int distanceToWin = 100;
     Animator anim;
     Camera cam;
+    public bool OnDragonBoss = false;
 
     float saveSpeed;
     void Start()
@@ -15,6 +16,7 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         cam = Camera.main;
         saveSpeed = speed;
+        OnDragonBoss = false;
     }
 
     void Update()
@@ -30,6 +32,13 @@ public class PlayerController : MonoBehaviour
 
             float moveV = Input.GetAxis("Vertical");
             float moveH = Input.GetAxis("Horizontal");
+
+            if (GlobalControl.Instance.currentSceneIndex == 4 && OnDragonBoss)
+            {
+                xMax += 5;
+                xMin -= 5;
+                zMin -= 2;
+            }
 
             /*if (transform.position.z >= distanceToWin)
             {
@@ -74,6 +83,11 @@ public class PlayerController : MonoBehaviour
     void ResetSpeed()
     {
         speed = saveSpeed;
+    }
+
+    public void ToggleOnDragonBoss()
+    {
+        OnDragonBoss = true;
     }
 
 

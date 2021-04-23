@@ -56,6 +56,9 @@ public class GameFlow : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
 
+        //Want to make sure camera isn't messed up by the dragon fight.
+        GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraBehavior>().SetRotation(new Vector3(90, 0, 0));
+
     }
 
     // Update is called once per frame
@@ -146,6 +149,7 @@ public class GameFlow : MonoBehaviour
 
         int currentScene = GlobalControl.Instance.currentSceneIndex;
         print(currentScene);
+        //level 3 boss room offset: (0f, 1.5f, -12.72f)
         //level 2 boss room offset: (-.53f, 9.6f, 2f)
         //level 1 boss room offset (-1.92, 3.767, -1f)
         if (currentScene == 2)
@@ -155,6 +159,10 @@ public class GameFlow : MonoBehaviour
         else if (currentScene == 3)
         {
             Instantiate(bossRoom, nextTileSpawn + new Vector3(-.53f, 9.6f, 2f), mainTileObj.rotation);
+        }
+        else if (currentScene == 4)
+        {
+            Instantiate(bossRoom, nextTileSpawn + new Vector3(0f, 1.5f, -12.72f), mainTileObj.rotation);
         }
         
 

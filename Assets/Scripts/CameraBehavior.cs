@@ -11,10 +11,9 @@ public class CameraBehavior : MonoBehaviour
         GetComponent<Rigidbody>().velocity = new Vector3(0, 0, cameraVelocity);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetRotation(Vector3 rotation)
     {
-        
+        transform.rotation = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
     }
 
     public void SetVelocity(int newVelocity)

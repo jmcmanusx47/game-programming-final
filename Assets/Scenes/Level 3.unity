@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: d62d7b7cfd1549c4aa6733696e50dc99, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: ab675e6698bde46fd87143fb0d7580cb, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -3069,9 +3069,9 @@ MonoBehaviour:
   - {fileID: 1297451477}
   ground: {fileID: 471333987}
   groundSize: 50
-  bossRoom: {fileID: 4258386613365113057, guid: 67f94ce33182a39489cd658bcb794fc1,
+  bossRoom: {fileID: 5154007562965442640, guid: 3f62dcbf1959ad94b84a44fe452ab05d,
     type: 3}
-  distanceToBoss: 50
+  distanceToBoss: 60
   levelRequiredForBoss: 4
 --- !u!114 &1541962984 stripped
 MonoBehaviour:

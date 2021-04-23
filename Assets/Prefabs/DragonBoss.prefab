@@ -1808,9 +1808,8 @@ GameObject:
   - component: {fileID: 4765662689256076257}
   - component: {fileID: 4765662689263754721}
   - component: {fileID: 4765662688201519503}
-  - component: {fileID: 4765662688201519472}
   - component: {fileID: 4765662688201519473}
-  - component: {fileID: 4765662688201519476}
+  - component: {fileID: 3768628244058437884}
   m_Layer: 0
   m_Name: DragonBoss
   m_TagString: Boss
@@ -1912,38 +1911,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.2933652, y: 1.8927937, z: 2.5796576}
   m_Center: {x: 0.043344777, y: 0.9158958, z: 0.78982687}
---- !u!114 &4765662688201519472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4765662689256500993}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51082d06e94f9904aa72e34d68a705f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentState: 0
-  trackingProjectile: {fileID: 9174176721848232151, guid: b93bc827a018bd643a00b67c36724447,
-    type: 3}
-  spellProjectile: {fileID: 1846563170864394, guid: 3bbebb6123d7fdd4fa718a9ea192c837,
-    type: 3}
-  skeletonSpawnPrefab: {fileID: 6867562150427944143, guid: 3b6b962c9f8cfea42be2c5021a13221e,
-    type: 3}
-  player: {fileID: 6867562150427944143, guid: 3b6b962c9f8cfea42be2c5021a13221e, type: 3}
-  enemySpeed: 5
-  onScreen: 0
-  shootCooldown: 3
-  shootSpeed: 100
-  phaseChangeTime: 5
-  elapsedTime: 0
-  spawnCooldown: 2
-  castingCooldown: 0.5
-  enemySpawnPoints: []
-  enemySpawnVFX: {fileID: 4487015033161823706, guid: 3e8195fc22ade184986c0865bf154cbe,
-    type: 3}
-  enemyhealth: {fileID: 0}
 --- !u!114 &4765662688201519473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1956,12 +1923,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38b3a762178f1134d9f21f0b5c6fb109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 2000
+  startingHealth: 3000
   enemyDead: 0
   currentHealth: 0
   poof: {fileID: 4487015033161823706, guid: 3e8195fc22ade184986c0865bf154cbe, type: 3}
-  xpPoints: 20
---- !u!114 &4765662688201519476
+  xpPoints: 500
+--- !u!114 &3768628244058437884
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1970,19 +1937,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 4765662689256500993}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a3efbad1f1afac4db710e30a479ae1a, type: 3}
+  m_Script: {fileID: 11500000, guid: 216416fc3b71620468ad74261f7f1b9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: 3
+  currentState: 0
   spellProjectile: {fileID: 1846563170864394, guid: 2c14188caa1f7004cbbfed9a2de0f33a,
     type: 3}
   player: {fileID: 0}
   enemySpeed: 5
   onScreen: 0
-  shootCooldown: 3
+  shootCooldown: 2
   phaseChangeTime: 5
   elapsedTime: 0
-  spawnCooldown: 0.3
+  spawnCooldown: 0.25
   castingCooldown: 0.5
   fireballSpawnPoints: []
   angleFireballSpawnPoints: []
@@ -13663,7 +13630,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4765662689638273119}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.063000016, y: 1.3970001, z: 2.262}
+  m_LocalPosition: {x: 0.063000016, y: 2.77, z: 2.419}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4765662689256076257}

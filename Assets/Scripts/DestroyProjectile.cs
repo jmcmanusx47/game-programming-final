@@ -58,14 +58,14 @@ public class DestroyProjectile : MonoBehaviour
             {
                 checkOnScreen = other.gameObject.GetComponent<BossFSM>().onScreen;
             }
-            else
+            else if (GlobalControl.Instance.currentSceneIndex == 3)
             {
                 checkOnScreen = other.gameObject.GetComponent<SecondBossFSM>().onScreen;
             }
-           // else 
-            //{
-                //checkOnScreen = other.gameObject.GetComponent<ThirdBossFSM>().onScreen;
-            //}
+            else 
+            {
+                checkOnScreen = other.gameObject.GetComponent<ThirdBossFSM>().onScreen;
+            }
             
             bool isDead = enemyHealth.enemyDead;
             //bool checkOnScreen = bossFSM.onScreen;

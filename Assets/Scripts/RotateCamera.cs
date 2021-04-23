@@ -14,7 +14,9 @@ public class RotateCamera : MonoBehaviour
             if (other.CompareTag("MainCamera"))
             {
                 //print("Stopped Camera, called from: " + transform.position);
-                GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraBehavior>().SetRotation(new Vector3(xRotation, 0, 0));
+                CameraBehavior cb = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraBehavior>();
+                cb.SetRotation(new Vector3(xRotation, 0, 0));
+                cb.SetVelocity(2);
                 hasRotatedCamera = true;
 
             }

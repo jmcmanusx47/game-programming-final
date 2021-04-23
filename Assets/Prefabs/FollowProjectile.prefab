@@ -222,7 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  delay: 2
   speed: 7
-  damageAmount: 20
+  projectileDamage: 20
   onScreen: 0
-  track: 1

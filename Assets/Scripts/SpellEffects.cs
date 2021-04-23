@@ -9,6 +9,7 @@ public class SpellEffects : MonoBehaviour
     public float delay;
     public int cost;
     public float duration;
+    public AudioClip spellSFX;
 
     GameObject player;
     bool playerStopped = false;
@@ -40,10 +41,11 @@ public class SpellEffects : MonoBehaviour
         controller = player.GetComponent<PlayerController>();
         spells = player.GetComponent<PlayerSpells>();
         playerSpeed = controller.speed;
+        AudioSource.PlayClipAtPoint(spellSFX, Camera.main.transform.position);
         Invoke(spellName, delay);
     }
 
-    public void Fireball()
+    public void FireBall()
     {
         var pos = player.transform.position;
         pos.y += 1.5f;
@@ -75,7 +77,6 @@ public class SpellEffects : MonoBehaviour
         lightningScript.EndPosition.z = pos.z + 40;
         GameObject projectile = Instantiate(gameObject, pos,
             player.transform.rotation);
-
         Destroy(projectile, 0.2f);
         Invoke("SetPlayerStop", 0.75f);
     }
@@ -142,7 +143,7 @@ public class SpellEffects : MonoBehaviour
         var pos = player.transform.position;
         GameObject wither = Instantiate(gameObject, pos,
             player.transform.rotation);
-        Destroy(wither, 0.75f);
+        Destroy(wither, 0.75f);        
     }
 
     public void Fortify()

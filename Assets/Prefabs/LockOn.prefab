@@ -9269,7 +9269,8 @@ MonoBehaviour:
   spellName: LockOn
   delay: 0
   cost: 50
-  duration: 0
+  duration: 5
+  spellSFX: {fileID: 8300000, guid: f8492e4aba06e4344abbe95f3696963c, type: 3}
 --- !u!1 &100006
 GameObject:
   m_ObjectHideFlags: 0

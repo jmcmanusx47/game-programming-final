@@ -13882,8 +13882,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spellName: CloudKill
   delay: 0
-  cost: 0
+  cost: 30
   duration: 0
+  spellSFX: {fileID: 8300000, guid: 6a6dac14219eec347871be368123a296, type: 3}
 --- !u!114 &4586372205855645814
 MonoBehaviour:
   m_ObjectHideFlags: 0

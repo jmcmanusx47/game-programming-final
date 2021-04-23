@@ -25,9 +25,7 @@ public class PlayerSpells : MonoBehaviour
     public Color unequip;
     public bool buff;
     public bool questionUpgrade;
-
-    public AudioClip lightSFX;
-    public AudioClip cloudSFX;
+    public AudioClip emptySFX;
 
     int QSpellCost = 0;
     int WSpellCost = 0;
@@ -138,6 +136,7 @@ public class PlayerSpells : MonoBehaviour
                 else
                 {
                     // Spell Fizzle SFX
+                    AudioSource.PlayClipAtPoint(emptySFX, Camera.main.transform.position);
                 }
             }
             else if (Input.GetKeyDown("e"))
@@ -145,12 +144,12 @@ public class PlayerSpells : MonoBehaviour
                 if (currentMana >= WSpellCost && WSpell != null)
                 {
                     WSpell.InvokeSpell();
-                    AudioSource.PlayClipAtPoint(cloudSFX, transform.position);
                     LoseMana(WSpellCost);
                 }
                 else
                 {
                     // Spell Fizzle SFX
+                    AudioSource.PlayClipAtPoint(emptySFX, Camera.main.transform.position);
                 }
             }
             else if (Input.GetKeyDown("r"))
@@ -158,12 +157,12 @@ public class PlayerSpells : MonoBehaviour
                 if (currentMana >= ESpellCost && ESpell != null)
                 {
                     ESpell.InvokeSpell();
-                    AudioSource.PlayClipAtPoint(lightSFX, transform.position);
                     LoseMana(ESpellCost);
                 }
                 else
                 {
                     // Spell Fizzle SFX
+                    AudioSource.PlayClipAtPoint(emptySFX, Camera.main.transform.position);
                 }
             }
             else if (Input.GetKeyDown(KeyCode.LeftShift))
@@ -176,6 +175,7 @@ public class PlayerSpells : MonoBehaviour
                 else
                 {
                     // Spell Fizzle SFX
+                    AudioSource.PlayClipAtPoint(emptySFX, Camera.main.transform.position);
                 }
             }
         }

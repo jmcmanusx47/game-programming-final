@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     public bool isGameWon = false;
 
     public AudioClip winSFX;
+    public AudioClip loseSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -40,8 +41,7 @@ public class LevelManager : MonoBehaviour
         gameText.text = "YOU LOSE!";
         gameText.gameObject.SetActive(true);
 
-        //Camera.main.GetComponent<AudioSource>().pitch = 1;
-        //AudioSource.PlayClipAtPoint(gameOverSFX, Camera.main.transform.position);
+        AudioSource.PlayClipAtPoint(loseSFX, Camera.main.transform.position, 0.015f);
 
         Invoke("LoadShop", 2);
     }
@@ -51,7 +51,9 @@ public class LevelManager : MonoBehaviour
         isGameOver = true;
         isGameWon = true;
         gameText.text = "YOU WIN!";
+
         AudioSource.PlayClipAtPoint(winSFX, transform.position);
+
         gameText.gameObject.SetActive(true);
         Invoke("LoadShop", 2);
     }

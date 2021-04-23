@@ -474,7 +474,6 @@ MonoBehaviour:
   damageReduction: 1
   healthSlider: {fileID: 0}
   healthText: {fileID: 0}
-  deadSFX: {fileID: 0}
   damageSFX: {fileID: 0}
 --- !u!114 &328203157456656338
 MonoBehaviour:
@@ -505,8 +504,9 @@ MonoBehaviour:
   RSpellIcon: {fileID: 0}
   blankSpellIcon: {fileID: 0}
   unequip: {r: 0, g: 0, b: 0, a: 0}
-  lightSFX: {fileID: 0}
-  cloudSFX: {fileID: 0}
+  buff: 0
+  questionUpgrade: 0
+  emptySFX: {fileID: 8300000, guid: 71e4c477fb440f64c8950c1c8de46231, type: 3}
 --- !u!114 &328203157456656337
 MonoBehaviour:
   m_ObjectHideFlags: 0

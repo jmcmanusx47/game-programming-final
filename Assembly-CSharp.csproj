@@ -86,6 +86,7 @@
      <Compile Include="Assets\Scripts\LevelPointManager.cs" />
      <Compile Include="Assets\Scripts\LockOn.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\PauseMenuBehavior.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
@@ -96,6 +97,7 @@
      <Compile Include="Assets\Scripts\ShopFunctionality.cs" />
      <Compile Include="Assets\Scripts\SpellEffects.cs" />
      <Compile Include="Assets\Scripts\StopCamera.cs" />
+     <Compile Include="Assets\Scripts\ThirdBossFSM.cs" />
      <Compile Include="Assets\Scripts\WitherFunctionality.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
@@ -662,8 +664,14 @@
  <Reference Include="Unity.VSCode.Editor">
  <HintPath>C:/Users/sherb/OneDrive/Documents/GitHub/Game-Programming-Final/game-programming-final/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.Recorder.Editor">
+ <HintPath>C:/Users/sherb/OneDrive/Documents/GitHub/Game-Programming-Final/game-programming-final/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+ </Reference>
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/sherb/OneDrive/Documents/GitHub/Game-Programming-Final/game-programming-final/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Recorder">
+ <HintPath>C:/Users/sherb/OneDrive/Documents/GitHub/Game-Programming-Final/game-programming-final/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Users/sherb/OneDrive/Documents/GitHub/Game-Programming-Final/game-programming-final/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -676,6 +684,9 @@
  </Reference>
  <Reference Include="Unity.Rider.Editor">
  <HintPath>C:/Users/sherb/OneDrive/Documents/GitHub/Game-Programming-Final/game-programming-final/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Recorder.Base">
+ <HintPath>C:/Users/sherb/OneDrive/Documents/GitHub/Game-Programming-Final/game-programming-final/Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
  </Reference>
  <Reference Include="Unity.TextMeshPro">
  <HintPath>C:/Users/sherb/OneDrive/Documents/GitHub/Game-Programming-Final/game-programming-final/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>

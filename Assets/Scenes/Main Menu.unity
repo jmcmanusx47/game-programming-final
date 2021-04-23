@@ -248,6 +248,7 @@ RectTransform:
   - {fileID: 1829484976}
   - {fileID: 2045736506}
   - {fileID: 1465695823}
+  - {fileID: 929654132}
   m_Father: {fileID: 1294105712}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -305,6 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87bd0a5723ecd3043bcd59c3da2281de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelText: {fileID: 929654133}
 --- !u!1 &222415057
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,7 +699,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -147}
-  m_SizeDelta: {x: 1800, y: 500}
+  m_SizeDelta: {x: 2000, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534355070
 MonoBehaviour:
@@ -734,7 +736,8 @@ MonoBehaviour:
   m_Text: Travel onwards and defeat the enemies you encounter along the way by shooting
     projectiles and using spells. Killing enemies earns you mana which can be used
     to cast spells. Killing enemies also increases your level which you can use in
-    the shop to unlock and equip level ups and new spells
+    the shop to unlock and equip level ups and new spells. When you have a buff active,
+    you cannot cast other spells
 --- !u!222 &534355071
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -820,6 +823,84 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927254534}
+  m_CullTransparentMesh: 0
+--- !u!1 &929654131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 929654132}
+  - component: {fileID: 929654134}
+  - component: {fileID: 929654133}
+  m_Layer: 5
+  m_Name: Level Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &929654132
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929654131}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.51563, y: 0.51563, z: 0.51563}
+  m_Children: []
+  m_Father: {fileID: 146319423}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -398}
+  m_SizeDelta: {x: 1300, y: 125}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &929654133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929654131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.5849056, b: 0.054317813, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_FontSize: 110
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 300
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Total Levels Earned: 0'
+--- !u!222 &929654134
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929654131}
   m_CullTransparentMesh: 0
 --- !u!1 &1100787414
 GameObject:
@@ -2053,6 +2134,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2045736505}
   m_CullTransparentMesh: 0
+--- !u!1 &2045797202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2045797204}
+  - component: {fileID: 2045797203}
+  m_Layer: 0
+  m_Name: Global
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2045797203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045797202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8ec78c4136780499cd9857e8f7ec0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
+  currentMana: 0
+  currentExperience: 0
+  level: 0
+  levelPoints: 0
+  originalSpeed: 1
+  currentSpeed: 1
+  originalFireRate: 0.25
+  currentFireRate: 0.25
+  originalDamage: 20
+  currentDamage: 20
+  originalManaRegen: 2
+  currentManaRegen: 2
+  damageReduction: 1
+  QSpell: {fileID: 0}
+  ESpell: {fileID: 0}
+  RSpell: {fileID: 0}
+  LSSpell: {fileID: 0}
+  QSpellIcon: {fileID: 0}
+  ESpellIcon: {fileID: 0}
+  RSpellIcon: {fileID: 0}
+  LSSpellIcon: {fileID: 0}
+  questionUpgrade: 0
+  maxMoveSpeed: 0
+  maxFireRate: 0
+  maxAttackDamage: 0
+  maxDamageReduction: 0
+  maxManaRegen: 0
+  maxSpellSlots: 0
+  QSpellUnlock: 0
+  ESpellUnlock: 0
+  RSpellUnlock: 0
+  LSSpellUnlock: 0
+  currentSceneIndex: 2
+--- !u!4 &2045797204
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045797202}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2110920986
 GameObject:
   m_ObjectHideFlags: 0

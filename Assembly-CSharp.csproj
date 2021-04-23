@@ -86,6 +86,7 @@
      <Compile Include="Assets\Scripts\LevelPointManager.cs" />
      <Compile Include="Assets\Scripts\LockOn.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\NewBehaviourScript.cs" />
      <Compile Include="Assets\Scripts\PauseMenuBehavior.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\PlayerHealth.cs" />
@@ -96,6 +97,7 @@
      <Compile Include="Assets\Scripts\ShopFunctionality.cs" />
      <Compile Include="Assets\Scripts\SpellEffects.cs" />
      <Compile Include="Assets\Scripts\StopCamera.cs" />
+     <Compile Include="Assets\Scripts\ThirdBossFSM.cs" />
      <Compile Include="Assets\Scripts\WitherFunctionality.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

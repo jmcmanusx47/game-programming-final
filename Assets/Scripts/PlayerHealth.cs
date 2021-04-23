@@ -15,8 +15,6 @@ public class PlayerHealth : MonoBehaviour
 
     float saveReduc;
 
-    //public Material deadMateral;
-
     public Slider healthSlider;
 
     public Text healthText;

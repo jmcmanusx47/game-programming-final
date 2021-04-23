@@ -922,6 +922,7 @@ MonoBehaviour:
   shopIndex: 1
   isGameWon: 0
   winSFX: {fileID: 8300000, guid: 2fe16b80a284a694db7c3799893b67db, type: 3}
+  loseSFX: {fileID: 8300000, guid: f9b617091408d1445801878fc7cd46f6, type: 3}
 --- !u!4 &559119111
 Transform:
   m_ObjectHideFlags: 0

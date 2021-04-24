@@ -38,6 +38,7 @@ public class SecondBossFSM : MonoBehaviour
 
     public EnemyHealth enemyhealth;
     int health;
+    private bool isDead;
 
     
     Animator anim;
@@ -53,6 +54,7 @@ public class SecondBossFSM : MonoBehaviour
         enemyhealth = GetComponent<EnemyHealth>();
         anim = GetComponent<Animator>();
 
+        isDead = false;
         shootCD = shootCooldown;
         castingcd = castingCooldown;
         elapsedTime = phaseChangeTime;
@@ -203,8 +205,12 @@ public class SecondBossFSM : MonoBehaviour
 
     void UpdateDeadState()
     {
+        if (!isDead)
+        {
+            GameObject.FindObjectOfType<LevelManager>().LevelWon();
+            isDead = true;
 
-        GameObject.FindObjectOfType<LevelManager>().LevelWon();
+        }
 
         //Enemy health deals with death stuff.
     }

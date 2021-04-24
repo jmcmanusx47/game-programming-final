@@ -21,9 +21,11 @@ public class LevelManager : MonoBehaviour
         isGameOver = false;
     }
 
+    /*
     // Update is called once per frame
     void Update()
     {
+        
         if (Input.GetKey("j"))
         {
             LevelWon();
@@ -33,6 +35,7 @@ public class LevelManager : MonoBehaviour
             LevelLost();
         }
     }
+    */
 
     public void LevelLost()
     {

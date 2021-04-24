@@ -11,6 +11,7 @@ public class EnemyMovement : MonoBehaviour
     public int damageAmount = 20;
     public bool onScreen = false;
     public bool track = true;
+    public bool boss = false;
     public float slowDuration = 1;
 
     float saveSpeed;
@@ -34,7 +35,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gameObject.GetComponent<EnemyHealth>().enemyDead && onScreen)
+        if (!boss && !gameObject.GetComponent<EnemyHealth>().enemyDead && onScreen)
         {
             float step = speed * Time.deltaTime;
             if (transform.position.z <= player.position.z)
@@ -72,7 +73,7 @@ public class EnemyMovement : MonoBehaviour
     }
 
     private void ResetSpeed()
-    {
+        {
         speed = saveSpeed;
         slow = false;
     }

@@ -49,6 +49,7 @@ public class DestroyProjectile : MonoBehaviour
             gameObject.SetActive(false);
             Destroy(gameObject, 0.5f);
         }
+        /*
         if (other.gameObject.CompareTag("Boss"))
         {
             var enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
@@ -76,5 +77,6 @@ public class DestroyProjectile : MonoBehaviour
                 playerSpells.GainMana(manaRegen);
             }
         }
+        */
     }
 }

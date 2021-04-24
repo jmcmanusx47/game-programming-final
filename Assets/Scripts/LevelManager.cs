@@ -85,5 +85,6 @@ public class LevelManager : MonoBehaviour
                 return;
             }
         }
+        SceneManager.LoadScene(shopIndex);
     }
 }

@@ -224,5 +224,5 @@ MonoBehaviour:
   player: {fileID: 0}
   delay: 2
   speed: 7
-  projectileDamage: 10
+  projectileDamage: 20
   onScreen: 0

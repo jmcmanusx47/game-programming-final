@@ -35,6 +35,7 @@ public class BossFSM : MonoBehaviour
     public EnemyHealth enemyhealth;
     int health;
     public bool isCharging;
+    bool isDead;
 
     
     Animator anim;
@@ -53,6 +54,7 @@ public class BossFSM : MonoBehaviour
         shootCD = shootCooldown;
         elapsedTime = phaseChangeTime;
         health = enemyhealth.currentHealth;
+        isDead = false;
         currentState = FSMStates.Patrol;
         FindNextPoint();
     }
@@ -214,8 +216,11 @@ public class BossFSM : MonoBehaviour
     void UpdateDeadState()
     {
 
-
-        GameObject.FindObjectOfType<LevelManager>().LevelWon();
+        if (!isDead)
+        {
+            GameObject.FindObjectOfType<LevelManager>().LevelWon();
+            isDead = true;
+        }
 
         //Enemy health deals with death stuff.
     }

@@ -333,9 +333,10 @@ public class ThirdBossFSM : MonoBehaviour
         {
             anim.SetTrigger("Die");
             deadAnimPlayed = true;
+            GameObject.FindObjectOfType<LevelManager>().LevelWon();
         }
 
-        GameObject.FindObjectOfType<LevelManager>().LevelWon();
+        
 
         //Enemy health deals with death stuff.
     }

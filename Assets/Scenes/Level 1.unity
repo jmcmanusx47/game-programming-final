@@ -1826,6 +1826,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2114589756261037326, guid: 0fc8848ae53a99545b236aee124b64fd,
         type: 3}
+      propertyPath: level
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2114589756261037326, guid: 0fc8848ae53a99545b236aee124b64fd,
+        type: 3}
       propertyPath: expText
       value: 
       objectReference: {fileID: 1699960639}

@@ -44,36 +44,46 @@ public class LevelManager : MonoBehaviour
         gameText.text = "YOU LOSE!";
         gameText.gameObject.SetActive(true);
 
-        AudioSource.PlayClipAtPoint(loseSFX, Camera.main.transform.position, 0.015f);
+        AudioSource.PlayClipAtPoint(loseSFX, Camera.main.transform.position, 0.025f);
 
         Invoke("LoadShop", 2);
     }
 
     public void LevelWon()
     {
-        isGameOver = true;
-        isGameWon = true;
-        gameText.text = "YOU WIN!";
+        if (!isGameOver)
+        {
+            Debug.Log("WIN");
+            isGameOver = true;
+            isGameWon = true;
+            gameText.text = "YOU WIN!";
 
-        AudioSource.PlayClipAtPoint(winSFX, transform.position);
+            AudioSource.PlayClipAtPoint(winSFX, transform.position);
 
-        gameText.gameObject.SetActive(true);
-        Invoke("LoadShop", 2);
+            gameText.gameObject.SetActive(true);
+            Invoke("LoadShop", 2);
+        }
     }
 
     void LoadShop()
     {
+        Debug.Log("LOAD");
         if (isGameWon)
         {
             if (GlobalControl.Instance.currentSceneIndex == 2)
             {
                 GlobalControl.Instance.currentSceneIndex = 3;
+                Debug.Log("Scene: " + GlobalControl.Instance.currentSceneIndex);
+                SceneManager.LoadScene(shopIndex);
+                return;
             }
             else if (GlobalControl.Instance.currentSceneIndex == 3)
             {
                 GlobalControl.Instance.currentSceneIndex = 4;
+                Debug.Log("Scene: " + GlobalControl.Instance.currentSceneIndex);
+                SceneManager.LoadScene(shopIndex);
+                return;
             }
         }
-        SceneManager.LoadScene(shopIndex);
     }
 }

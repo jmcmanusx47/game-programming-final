@@ -513,7 +513,7 @@ PrefabInstance:
     - target: {fileID: 6867562150427944143, guid: 3b6b962c9f8cfea42be2c5021a13221e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b6b962c9f8cfea42be2c5021a13221e, type: 3}
@@ -1567,7 +1567,7 @@ MonoBehaviour:
   ESpellUnlock: 0
   RSpellUnlock: 0
   LSSpellUnlock: 0
-  currentSceneIndex: 2
+  currentSceneIndex: 3
 --- !u!224 &818474137 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3328570082583055808, guid: 7cac34688f35d44c49a7aa3ac4d92042,
